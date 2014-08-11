@@ -33,7 +33,7 @@ Determiners ;
 Conjunctions ;
 
 !##############################################################################
-! 
+ 
 ! 0      I      II       III          IV                 V
 ! Stem + Num. + Poss. + (Nom. poss. + Nom. poss. num.) + Case
 ! ház                                                            'ház'
