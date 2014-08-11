@@ -44,7 +44,7 @@ Conjunctions ;
 ! ház           am       é                               ban     'házaméban' 
 ! ház           am       é            i
 ! ház    ai     m        
-!
+
 !##############################################################################
 
 LEXICON Cases                ! Vowels in parentheses come after C final stems.
