@@ -1,0 +1,12 @@
+!! Nouns
+!! -----
+!! Nouns in UNDEFINED language are things.
+
+LEXICON Nouns
+sör:sör Cases ;
+katoná:katoná Cases ;
+lázadó:lázadó Cases ;
+láz:láz Cases ;
+adó:adó Cases ;
+
+! vim: set ft=xfst-lexc:
