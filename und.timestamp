@@ -1,4 +1,91 @@
-$Rev: 110791 $
+$Rev: 114860 $
+Prefixed all silent build strings for Hfst tools with H, for easier
+identification.
+
+r114468:
+Commented out the old target for calculating unit weights (default weight for
+out-of-corpus word forms), and added a new which is basically the highest
+tropical weight + the ALPHA smoothing value. This is just the first step in
+further developing the suggestion ordering for the spellers.
+
+r114332:
+Added a simple test to check a minimum suggestion speed for our test word
+nuvviDspeller. No speller should be released that does not pass this test.
+Additional and more elaborate tests should be added as well, this is just the
+very bare minimum in suggestion speed testing.
+
+r114310:
+Corrected typo in twolc compilation for foma (using hfst).
+
+r114286:
+Worked around a bug in hfst-fst2fst by going via att and foma instead.
+
+r114281:
+Initial support for compiling twolc files for foma by way of hfst, intersect and
+conversion to foma format.
+
+r114124:
+Yaml testing is now working also when building with Foma.
+
+r114105:
+Fixed downcasing of derived short names. Made yaml testing output a bit more
+readable (hopefully).
+
+r113871:
+More robust xfscript build code for hfst-xfst. Clean hfstol files.
+
+r113770:
+Extended Foma support to alternate writing systems and orthographies. At the
+same time put to use a new idiom to handle multiple independent target
+variables / patterns, which will be useful in other contexts as well. The code
+was generalised using this new idiom, and effectively reduced to half the
+original code size, with much less duplicate code.
+
+r113520:
+First working version of foma builds. The basic set of analysers and generators
+are built, but nothing else. A lot of changes to variables and build rules,
+including generalisations that save quite a few lines of code.
+
+r113372:
+First steps to support building with Foma. Lexicon compilation is working, but
+note that Foma crashes on regexes in lexc.
+
+r111916:
+Slightly more robust pair-testing with hfst.
+
+r111898:
+Corrected rsynk options also for the alternate writing system oxt's.
+
+r111883:
+Fixed a build bug for MacVoikko, causing the final target to always be out of
+date. Regulated verbosity for zhfst targets. The twolc testing scripts now
+print a message when there is no test data. The Hfst twolc testing script
+properly detects when there is no test data, and exits with the SKIP (77) value.
+
+r111786:
+Added support for alternate writing systems for spellers.
+
+r111627:
+Finally got all weighting to work as intended, including the no-sugg weights.
+
+r111511:
+Further modularisation and improvements to weighted spellers. With hfst3
+revision 4329, using a tab-separated tag reweighting file is working.
+
+r111192:
+Do not remove usage tags when building spellers, speller tags were throwned out.
+
+r111179:
+Added an attempt at normalising the corpus-based weights towards a standard max
+upper weight, to allow a much higher weight for strings not to be suggested.
+Also split the processing of adding corpus-based weights and morphology weights
+into more steps - retaining each intermediate fst - to allow easier debugging
+of the weight assignments.
+
+r110944:
+Xerox composition of weights and lexical fst.
+
+r110791:
 Moved a script for cleaning weighting corpus to the core. Require new core.
 
 r110770:
