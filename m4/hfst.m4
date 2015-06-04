@@ -38,7 +38,8 @@ AC_DEFUN([gt_PROG_HFST],
             [with_hfst=no])
 
 # If Xerox tools are not found, assume we want Hfst:
-AS_IF([test x$gt_prog_xfst = xno], [with_hfst=yes])
+AS_IF([test x$gt_prog_xfst = xno \
+         -a x$gt_prog_foma = xno], [with_hfst=yes])
 
 AC_PATH_PROG(HFST_COMPOSE,           hfst-compose,           false, $PATH$PATH_SEPARATOR$with_hfst)
 AC_PATH_PROG(HFST_COMPOSE_INTERSECT, hfst-compose-intersect, false, $PATH$PATH_SEPARATOR$with_hfst)
@@ -51,6 +52,7 @@ AC_PATH_PROG(HFST_FST2FST,           hfst-fst2fst,           false, $PATH$PATH_S
 AC_PATH_PROG(HFST_FST2STRINGS,       hfst-fst2strings,       false, $PATH$PATH_SEPARATOR$with_hfst)
 AC_PATH_PROG(HFST_FST2TXT,           hfst-fst2txt,           false, $PATH$PATH_SEPARATOR$with_hfst)
 AC_PATH_PROG(HFST_INFO,              hfst-info, 	         false, $PATH$PATH_SEPARATOR$with_hfst)
+AC_PATH_PROG(HFST_INTERSECT,         hfst-intersect,         false, $PATH$PATH_SEPARATOR$with_hfst)
 AC_PATH_PROG(HFST_INVERT,            hfst-invert,            false, $PATH$PATH_SEPARATOR$with_hfst)
 AC_PATH_PROG(HFST_LEXC,              hfst-lexc,              false, $PATH$PATH_SEPARATOR$with_hfst)
 AC_PATH_PROG(HFST_LOOKUP,            hfst-lookup,            false, $PATH$PATH_SEPARATOR$with_hfst)
@@ -107,7 +109,7 @@ if test x$HFST_INFO != xfalse; then
             gt_prog_hfst=yes
         fi
     else
-        AC_MSG_ERROR([You requested --with-hfst / you have no Xerox tools, but your hfst is too old.])
+        AC_MSG_ERROR([You requested --with-hfst: hfst is too old. OR: no other fst tools were found (Xerox, Foma).])
     fi
 else
     AC_MSG_RESULT([no])
