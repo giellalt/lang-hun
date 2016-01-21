@@ -145,6 +145,7 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 !! FRONT/BACK VOWEL HARMONY
 @U.VOWEL-HARMONY.BACK@
 @U.VOWEL-HARMONY.FRONT@
+@C.VOWEL-HARMONY@  !!≈ | @CODE@ | used at word boundary
 
 !! We have manually optimised the structure of our lexicon using following
 !! flag diacritics to restrict morhpological combinatorics - only allow compounds
@@ -176,12 +177,13 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 LEXICON Root
 !! The word forms in UNDEFINED language start from the lexeme roots of basic
 !! word classes, or optionally from prefixes:
-0   Nouns       ;
-0   Verbs       ;
-0   Adjectives  ;
-0   Pronouns    ;
-0   Numerals    ;
-0   Prefixes    ;
+   Nouns       ;
+   Verbs       ;
+   Adjectives  ;
+   Propernouns    ;
+   Pronouns    ;
+   Numerals    ;
+   Prefixes    ;
 
 LEXICON K
 #;
@@ -206,6 +208,7 @@ LEXICON N_HANG__n
 ! N_jaje
 +N:  NMN_HANG ;
 LEXICON NMN_HANG
+R ;
 +Sg@U.VOWEL-HARMONY.BACK@:00@U.VOWEL-HARMONY.BACK@ ASSOCIATIVE-POSSESSION-FOR-NOUN_WHEN-ABS ;
 +Pl0@U.VOWEL-HARMONY.BACK@:%>ok@U.VOWEL-HARMONY.BACK@ ASSOCIATIVE-POSSESSION-FOR-NOUN_ ;
 +Sg+Acc:%>ot # ;
@@ -216,6 +219,7 @@ LEXICON N_MACSKA__n
 ! N_jaje
 +N: NMN_MACSKA ;
 LEXICON NMN_MACSKA
+R ;
 +Sg@U.VOWEL-HARMONY.BACK@:%^V2VV0@U.VOWEL-HARMONY.BACK@ ASSOCIATIVE-POSSESSION-FOR-NOUN_WHEN-ABS ;
 +Pl0@U.VOWEL-HARMONY.BACK@:%^V2VV%>k@U.VOWEL-HARMONY.BACK@ ASSOCIATIVE-POSSESSION-FOR-NOUN_ ;
 +Sg+Acc:%^V2VV%>t # ;
@@ -226,6 +230,7 @@ LEXICON N_ADÁS__n
 ! N_ae
 +N: NMN_ADÁS ;
 LEXICON NMN_ADÁS
+R ;
 +Sg@U.VOWEL-HARMONY.BACK@:00@U.VOWEL-HARMONY.BACK@ ASSOCIATIVE-POSSESSION-FOR-NOUN_WHEN-ABS ;
 +Pl0@U.VOWEL-HARMONY.BACK@:%>ok@U.VOWEL-HARMONY.BACK@ ASSOCIATIVE-POSSESSION-FOR-NOUN_ ;
 +Sg+Acc:%>ot # ;
@@ -235,6 +240,7 @@ LEXICON NMN_ADÁS
 LEXICON N_ADÓ__n
 ! N_jaje
 +N: NMN_ADÓ ;
+R ;
 LEXICON NMN_ADÓ
 +Sg@U.VOWEL-HARMONY.BACK@:00@U.VOWEL-HARMONY.BACK@ ASSOCIATIVE-POSSESSION-FOR-NOUN_WHEN-ABS ;
 +Pl0@U.VOWEL-HARMONY.BACK@:%>k@U.VOWEL-HARMONY.BACK@ ASSOCIATIVE-POSSESSION-FOR-NOUN_ ;
@@ -246,6 +252,7 @@ LEXICON N_SÖR__n
 ! N_ae
 +N: NMN_SÖR ;
 LEXICON NMN_SÖR
+R ;
 +Sg@U.VOWEL-HARMONY.FRONT@:00@U.VOWEL-HARMONY.FRONT@ ASSOCIATIVE-POSSESSION-FOR-NOUN_WHEN-ABS ;
 +Pl0@U.VOWEL-HARMONY.FRONT@:%>ök@U.VOWEL-HARMONY.FRONT@ ASSOCIATIVE-POSSESSION-FOR-NOUN_ ;
 +Pl+Acc:%>ök%>et # ;
@@ -257,6 +264,7 @@ LEXICON N_BÉKE__n
 ! N_jaje
 +N: NMN_BÉKE ;
 LEXICON NMN_BÉKE
+R ;
 +Sg@U.VOWEL-HARMONY.FRONT@:%^V2VV0@U.VOWEL-HARMONY.FRONT@ ASSOCIATIVE-POSSESSION-FOR-NOUN_WHEN-ABS ;
 +Pl00@U.VOWEL-HARMONY.FRONT@:%^V2VV%>k@U.VOWEL-HARMONY.FRONT@ ASSOCIATIVE-POSSESSION-FOR-NOUN_ ;
 +Sg+Acc:%^V2VV%>t # ;
@@ -267,6 +275,7 @@ LEXICON N_ESÉS__n
 ! N_ae
 +N: NMN_ESÉS ;
 LEXICON NMN_ESÉS
+R ;
 +Sg@U.VOWEL-HARMONY.FRONT@:00@U.VOWEL-HARMONY.FRONT@ ASSOCIATIVE-POSSESSION-FOR-NOUN_WHEN-ABS ;
 +Pl0@U.VOWEL-HARMONY.FRONT@:%>%^Ö2k@U.VOWEL-HARMONY.FRONT@ ASSOCIATIVE-POSSESSION-FOR-NOUN_ ;
 +Sg+Acc:%>%^Ö2t # ;
@@ -431,17 +440,25 @@ LEXICON Cases
 
 !! Proper noun inflection
 !! ----------------------
-!! The UNDEFINED language proper nouns inflect in the same cases as regular
+!! The HUNGARIAN language proper nouns inflect in the same cases as regular
 !! nouns, but with a colon (':') as separator.
 
-LEXICON ProperNounCases
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-        -    Nouns  ;
+LEXICON PROP_MACSKA__n
++N+Prop: NMN_MACSKA ;
+LEXICON	 PROP_HANG__n
++N+Prop: NMN_HANG ;
+LEXICON	PROP_ADÓ__n
++N+Prop: NMN_ADÓ ;
+LEXICON PROP_ADÁS__n
++N+Prop: NMN_ADÁS ;
+LEXICON PROP_SÖR__n
++N+Prop: NMN_SÖR ;
+LEXICON PROP_BÉKE__n
++N+Prop: NMN_BÉKE ;
+LEXICON PROP_ESÉS__n
++N+Prop: NMN_ESÉS ;
+
+
 
 ! vim: set ft=xfst-lexc:
 
@@ -461,6 +478,9 @@ LEXICON Persons
 
 ! vim: set ft=xfst-lexc:
 
+
+LEXICON R
+@C.VOWEL-HARMONY@+Cmp#:@C.VOWEL-HARMONY@# Nouns ;
 !! Adjectives
 !! ----------
 !! Adjectives in UNDEFINED language describe things.
@@ -22078,6 +22098,31 @@ verbprefix-     Verbs   ;
 
 LEXICON Pronouns
 pronoun    Cases   ;
+
+! vim: set ft=xfst-lexc:
+!! Proper nouns
+!! --------
+!! Proper nouns in the HUNGARIAN language are references to things.
+
+LEXICON Propernouns
+Ázsia:Ázsia PROP_MACSKA__n ;
+Észak:Észak PROP_HANG__n ;
+Óceánia:Óceánia PROP_MACSKA__n ;
+Albin:Albin PROP_HANG__n ;
+Alfréd:Alfréd PROP_HANG__n ;
+Ármin:Ármin PROP_HANG__n ;
+Benjámin:Benjámin PROP_HANG__n ;
+Darwin:Darwin PROP_HANG__n ;
+Dávid:Dávid PROP_HANG__n ;
+Jusztin:Jusztin PROP_HANG__n ;
+Katalin:Katalin PROP_HANG__n ;
+Klotild:Klotild PROP_HANG__n ;
+Konstantin:Konstantin PROP_HANG__n ;
+Malvin:Malvin PROP_HANG__n ;
+Matild:Matild PROP_HANG__n ;
+Patrik:Patrik PROP_HANG__n ;
+Ulrik:Ulrik PROP_HANG__n ;
+
 
 ! vim: set ft=xfst-lexc:
 ! Divvun & Giellatekno - open source grammars for Sámi and other languages

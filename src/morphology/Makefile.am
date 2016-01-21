@@ -27,11 +27,13 @@ GT_LEXC_SRCS_L1_L2=\
 			 affixes/nouns.lexc       \
 			 affixes/propernouns.lexc \
 			 affixes/verbs.lexc       \
+			 compounding.lexc       \
 			 stems/adjectives.lexc    \
 			 stems/nouns.lexc         \
 			 stems/numerals.lexc      \
 			 stems/prefixes.lexc      \
 			 stems/pronouns.lexc      \
+			 stems/propernouns.lexc      \
 			 stems/punctuation.lexc   \
 			 stems/verbs.lexc
 
