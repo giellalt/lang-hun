@@ -3,21 +3,96 @@
 !! =================================== !
 
 Alphabet
- a b c d e f g h i j k l m n o p q r s t u v w x y z æ ø å
- á é ó ú í à è ò ù ì ä ë ö ü ï â ê ô û î ã ý þ ñ ð ß ç
+ a b c d e f g h i j k l m n o p q r s t u v w x y z
+ á é ó ú í ö ü ő ű
+ æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç
 
- A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Æ Ø Å
- Á É Ó Ú Í À È Ò Ù Ì Ä Ë Ö Ü Ï Â Ê Ô Û Î Ã Ý þ Ñ Ð
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+ Á É Ó Ú Í Ö Ü Ő Ű
+ Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç
 
- %>:0 ;
+!! TRIGGERS
+%^Ö2:0		!!= * @CODE@ h%^Ö2z
+%^V2:0		!!= * @CODE@ %^V2al 
+%^Hist:0         !!= * @CODE@ historic documents
+%^Pen:0		!!= * @CODE@ penultimate position
+%^RmVow:0	!!= * @CODE@ remove vowel
+%^V2VV:0	!!= * @CODE@ lengthen vowel
+%^VV2V:0	!!= * @CODE@ shorten vowel
+ %>
+ ;
 
 Sets
 
- Vow = a e i o u y æ ø å 
-       á é ó ú í à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;
- Cns = b c d f g h j k l m n p q r s t v w x z ð þ ;
+ Vow = a e i o u á é ó ú í ő ű ö ü
+       A E I O U Á É Ó Ú Í Ő Ű Ö Ü
+       æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;
+ VowAndY = Vow y Y ;
+
+ Cns = b c d f g h j k l m n p q r s t v w x z ð þ 
+       B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;
  
 Rules
+
+"Stem-final vowel lengthening"
+ Vx:Vy <=> _ %^V2VV: ;
+     where Vx in (a A e E)
+           Vy in (á Á é É)
+       matched ;
+!! béke+N+Sg+PxSg3
+!!€ béke%^V2VV%>je
+!!€ béké0%>je
+
+"Penultimate Stem vowel shortening"
+ Vx:Vy <=> _ [ Cns:+ |Cns:+ y ] %^Pen: %^VV2V: ;
+      where Vx in (ű Ű ő Ő ú Ú ó Ó é É í Í á Á)
+      	    Vy in (ü Ü ö Ö u U o O e E i I a A)
+	    matched ;
+!! madár+N+Pl+Nom
+!!€ madár%^Pen%^VV2V%>ak
+!!€ madar00%>ak
+
+"Penultimate Stem vowel removal"
+ Vx:0 <=> _ [ Cns:+ |Cns:+ y ] %^Pen: %^RmVow: ;
+      where Vx in (ü Ü ö Ö u U o O e E i I a A) ;
+!! forradalom+N+Pl+Nom
+!!€ forradalom%^Pen%^RmVow%>ak
+!!€ forradal0m00%>ak
+
+"Stem-final vowel removal"
+ Vx:0 <=> _ %^RmVow: ;
+      where Vx in (ű Ű ő Ő ú Ú ó Ó u U i I) ;
+!! falu+N+Pl+Nom
+!!€ falu%^RmVow%>vak
+!!€ fal00%>vak
+
+"Assimilation to stem-final consonant"
+ 0:Cx <=> Cx _ %> %^V2: ;
+     where Cx in (b c d f g j k l m n p r t v) ;
+
+"Assimilation to stem-final consonant followed by y"
+ 0:Cx <=> Cx _ y %> %^V2: ;
+    where Cx in (d l n r t) ;
+
+"Assimilation to stem-final zs cs "
+ 0:Cx <=> Cx _ s %> %^V2: ;
+      	  Vow ([[Cns:] - [s]]+) Cx _ %> %^V2: ;
+    where Cx in (z Z c C) ;
+
+"Assimilation to stem-final sz"
+ 0:s <=> s _ z %> %^V2: ;
+ Vow ([[Cns:] - [c | z]]+) s _ %> %^V2: ;
+
+"v from V2"
+ %^V2:v <=> [Vow: | Cns (y) %^Hist: | v ] %> _ Vow ;
+
+"%^Ö2 to ö"
+ %^Ö2:ö <=> [:ö | :ü |:ő | :ű] (Cns:+ ) %> (%^Ö2: ) Cns: _ Cns  ;
+            [:ö | :ü |:ő | :ű] Cns:+ %> _ [n |m | d | t]  ;
+
+"%^Ö2 to e"
+ %^Ö2:e <=> [:e | :i |:é | :í] (Cns:+ ) %> (%^Ö2: ) Cns: _ Cns  ;
+            [:e | :i |:é | :í] Cns:+ %> _ [n |m | d | t]  ;
 
 "Deleting stem-final s in s genitive"
  s:0 <=> Vow s %>: _ ;
