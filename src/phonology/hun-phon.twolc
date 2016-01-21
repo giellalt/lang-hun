@@ -35,7 +35,7 @@ Sets
 Rules
 
 "Stem-final vowel lengthening"
- Vx:Vy <=> _ %^V2VV: ;
+ Vx:Vy <=> _ %^V2VV: %> ;
      where Vx in (a A e E)
            Vy in (á Á é É)
        matched ;
