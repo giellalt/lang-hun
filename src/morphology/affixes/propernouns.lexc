@@ -1,16 +1,24 @@
 !! Proper noun inflection
 !! ----------------------
-!! The UNDEFINED language proper nouns inflect in the same cases as regular
+!! The HUNGARIAN language proper nouns inflect in the same cases as regular
 !! nouns, but with a colon (':') as separator.
 
-LEXICON ProperNounCases
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-+N+Prop:%:   Cases  ;
-        -    Nouns  ;
+LEXICON PROP_MACSKA__n
++N+Prop: NMN_MACSKA ;
+LEXICON	 PROP_HANG__n
++N+Prop: NMN_HANG ;
+LEXICON	PROP_ADÓ__n
++N+Prop: NMN_ADÓ ;
+LEXICON PROP_ADÁS__n
++N+Prop: NMN_ADÁS ;
+LEXICON PROP_SÖR__n
++N+Prop: NMN_SÖR ;
+LEXICON PROP_BÉKE__n
++N+Prop: NMN_BÉKE ;
+LEXICON PROP_ESÉS__n
++N+Prop: NMN_ESÉS ;
+
+
 
 ! vim: set ft=xfst-lexc:
 
