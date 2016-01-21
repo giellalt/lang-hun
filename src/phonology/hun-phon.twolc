@@ -88,11 +88,11 @@ Rules
 
 "%^Ö2 to ö"
  %^Ö2:ö <=> [:ö | :ü |:ő | :ű] (Cns:+ ) %> (%^Ö2: ) Cns: _ Cns  ;
-            [:ö | :ü |:ő | :ű] Cns:+ %> _ [n |m | d | t]  ;
+            [:ö | :ü |:ő | :ű] Cns:+ %> _ [n |m | d | t |k]  ;
 
 "%^Ö2 to e"
  %^Ö2:e <=> [:e | :i |:é | :í] (Cns:+ ) %> (%^Ö2: ) Cns: _ Cns  ;
-            [:e | :i |:é | :í] Cns:+ %> _ [n |m | d | t]  ;
+            [:e | :i |:é | :í] Cns:+ %> _ [n |m | d | t|k]  ;
 
 "Deleting stem-final s in s genitive"
  s:0 <=> Vow s %>: _ ;
