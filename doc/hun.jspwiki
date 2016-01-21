@@ -1,25 +1,25 @@
-!!!Free and Open source Finnish analyser gtsvn-fi
+!!!Free and Open source Hungarian analyser giella-hun
 
-;Authors: Divvun and Giellatekno teams, Aajege, community members
+;Authors: Divvun and Giellatekno teams, community members
 ;Software version: 2012
 ;Documentation license: GNU GFDL
 ;SVN Revision: $Revision: 68217 $
 ;SVN Date: $Date: 2013-01-16 11:31:33 +0200 (Wed, 16 Jan 2013) $
 
-!!!GTSVN-sma
+!!!giella-hun
 
-This is free and open source South Sámi morphology.
+This is free and open source Hungarian morphology.
 
            !!!Hungarian morphological analyser                      !
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
 
- !!!Multichar_Symbols definitions
+ !!!Definitions for Multichar_Symbols
 
 !!Analysis symbols
 ----------------
-The morphological analyses of wordforms of UNDEFINED language are presented
-in this system in terms of following symbols.
+The morphological analyses of wordforms for the Hungarian
+language are presented in this system in terms of the following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
 
 The parts-of-speech are:
@@ -29,6 +29,26 @@ The parts of speech are further split up into:
 The Usage extents are marked using following tags:
 
 The nominals are inflected in the following Case and Number
+
+ *  +Abl	  Ablative
+ *  +Acc	  Accusative
+ *  +Ade	  Adessive
+ *  +All	  Allative
+ *  +Cau	  Causative
+ *  +Del	  Delative
+ *  +Ela	  Elative
+ *  +Ess/F	  Formal-Essive
+ *  +Ess/M	  Modal-Essive
+ *  +Ill 	  Illative
+ *  +Ine	  Inessive
+ *  +Ins	  Instrumental
+ *  +Nom	  Nominative
+ *  +Ses	  Superessive
+ *  +Sla	  Sublative
+ *  +Ter	  Terminative
+ *  +Tra	  Translative
+
+
 
 The possession is marked as such:
 The comparative forms are:
@@ -51,15 +71,24 @@ Semantics are classified with
 Derivations are classified under the morphophonetic form of the suffix, the
 source and target part-of-speech.
 
-
 Morphophonology
 ---------------
 To represent phonologic variations in word forms we use the following
 symbols in the lexicon files:
-
+ *  %^Ö2		 h%^Ö2z
+ *  %^V2          ház%>%^V2al : házzal
 And following triggers to control variation
+ *  %^Hist          historic documents
+ *  %^Pen          penultimate position
+ *  %^RmVow        remove vowel
+ *  %^V2VV         lengthen vowel
+ *  %^VV2V         shorten vowel
+
 
 !!Flag diacritics
+POSSESSOR INDICES or POSSESSIVE SUFFIXES
+FRONT/BACK VOWEL HARMONY
+
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics - only allow compounds
 with verbs if the verb is further derived into a noun again:
@@ -89,4 +118,5 @@ given the proper use of these flags.
 
 The word forms in UNDEFINED language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
+
 

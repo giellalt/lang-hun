@@ -39,7 +39,26 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 
 !! The nominals are inflected in the following Case and Number
  +Sg +Du +Pl
- +Ess +Nom +Gen +Acc +Ill +Loc +Com +Com/Sh
+
+ +Abl	 !!= * @CODE@ Ablative
+ +Acc	 !!= * @CODE@ Accusative
+ +Ade	 !!= * @CODE@ Adessive
+ +All	 !!= * @CODE@ Allative
+ +Cau	 !!= * @CODE@ Causative
+ +Del	 !!= * @CODE@ Delative
+ +Ela	 !!= * @CODE@ Elative
+ +Ess/F	 !!= * @CODE@ Formal-Essive
+ +Ess/M	 !!= * @CODE@ Modal-Essive
+ +Ill 	 !!= * @CODE@ Illative
+ +Ine	 !!= * @CODE@ Inessive
+ +Ins	 !!= * @CODE@ Instrumental
+ +Nom	 !!= * @CODE@ Nominative
+ +Ses	 !!= * @CODE@ Superessive
+ +Sla	 !!= * @CODE@ Sublative
+ +Ter	 !!= * @CODE@ Terminative
+ +Tra	 !!= * @CODE@ Translative
+
+
 
 !! The possession is marked as such:
  +PxSg1 +PxSg2 +PxSg3 +PxDu1 +PxDu2 +PxDu3 +PxPl1 +PxPl2 +PxPl3
@@ -94,18 +113,39 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 !! source and target part-of-speech.
  +V→N +V→V +V→A
  +Der/xxx
-
+ +Der/Assoc_N
+ +Der/Poss_N
 
 !! Morphophonology
 !! ---------------
 !! To represent phonologic variations in word forms we use the following
 !! symbols in the lexicon files:
  {aä} {oö} {uü}
-
+ %^Ö2		!!= * @CODE@ h%^Ö2z
+ %^V2         !!= * @CODE@ ház%>%^V2al : házzal
 !! And following triggers to control variation
  {front} {back}
+ %^Hist         !!= * @CODE@ historic documents
+ %^Pen         !!= * @CODE@ penultimate position
+ %^RmVow       !!= * @CODE@ remove vowel
+ %^V2VV        !!= * @CODE@ lengthen vowel
+ %^VV2V        !!= * @CODE@ shorten vowel
+
 
 !! !!Flag diacritics
+!! POSSESSOR INDICES or POSSESSIVE SUFFIXES
+@U.PX.SG1@
+@U.PX.SG2@
+@U.PX.SG3@
+@U.PX.PL1@
+@U.PX.PL2@
+@U.PX.PL3@
+@D.PX@
+@R.PX@
+!! FRONT/BACK VOWEL HARMONY
+@U.VOWEL-HARMONY.BACK@
+@U.VOWEL-HARMONY.FRONT@
+
 !! We have manually optimised the structure of our lexicon using following
 !! flag diacritics to restrict morhpological combinatorics - only allow compounds
 !! with verbs if the verb is further derived into a noun again:
@@ -142,5 +182,8 @@ LEXICON Root
 0   Pronouns    ;
 0   Numerals    ;
 0   Prefixes    ;
+
+LEXICON K
+#;
 
 ! vim: set ft=xfst-lexc:
