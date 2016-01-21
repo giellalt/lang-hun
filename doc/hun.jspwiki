@@ -88,6 +88,7 @@ And following triggers to control variation
 !!Flag diacritics
 POSSESSOR INDICES or POSSESSIVE SUFFIXES
 FRONT/BACK VOWEL HARMONY
+ | @C.VOWEL-HARMONY@ | used at word boundary
 
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics - only allow compounds
