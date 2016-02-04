@@ -1,0 +1,25 @@
+!! Proper nouns
+!! --------
+!! Proper nouns in the HUNGARIAN language are references to things.
+
+LEXICON Propernouns
+Ázsia:Ázsia PROP_MACSKA__n ;
+Észak:Észak PROP_HANG__n ;
+Óceánia:Óceánia PROP_MACSKA__n ;
+Albin:Albin PROP_HANG__n ;
+Alfréd:Alfréd PROP_HANG__n ;
+Ármin:Ármin PROP_HANG__n ;
+Benjámin:Benjámin PROP_HANG__n ;
+Darwin:Darwin PROP_HANG__n ;
+Dávid:Dávid PROP_HANG__n ;
+Jusztin:Jusztin PROP_HANG__n ;
+Katalin:Katalin PROP_HANG__n ;
+Klotild:Klotild PROP_HANG__n ;
+Konstantin:Konstantin PROP_HANG__n ;
+Malvin:Malvin PROP_HANG__n ;
+Matild:Matild PROP_HANG__n ;
+Patrik:Patrik PROP_HANG__n ;
+Ulrik:Ulrik PROP_HANG__n ;
+
+
+! vim: set ft=xfst-lexc:
