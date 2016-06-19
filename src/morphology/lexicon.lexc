@@ -21,7 +21,7 @@
 Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 
 !! !!Analysis symbols
-!! ----------------
+! ----------------
 !! The morphological analyses of wordforms for the Hungarian
 !! language are presented in this system in terms of the following symbols.
 !! (It is highly suggested to follow existing standards when adding new tags).
@@ -117,7 +117,7 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
  +Der/Poss_N
 
 !! Morphophonology
-!! ---------------
+! ---------------
 !! To represent phonologic variations in word forms we use the following
 !! symbols in the lexicon files:
  {aä} {oö} {uü}
@@ -190,7 +190,7 @@ LEXICON K
 
 ! vim: set ft=xfst-lexc:
 !! Adjective inflection
-!! --------------------
+! --------------------
 !! The UNDEFINED language adjectives compare.
 
 LEXICON Comparisons
@@ -201,7 +201,7 @@ LEXICON Comparisons
 ! vim: set ft=xfst-lexc:
 
 !! Noun inflection
-!! ---------------
+! ---------------
 !! The HUNGARIAN language nouns inflect in cases.
 
 LEXICON N_HANG__n
@@ -439,7 +439,7 @@ LEXICON Cases
 ! vim: set ft=xfst-lexc:
 
 !! Proper noun inflection
-!! ----------------------
+! ----------------------
 !! The HUNGARIAN language proper nouns inflect in the same cases as regular
 !! nouns, but with a colon (':') as separator.
 
@@ -463,7 +463,7 @@ LEXICON PROP_ESÉS__n
 ! vim: set ft=xfst-lexc:
 
 !! Verb inflection
-!! ---------------
+! ---------------
 !! The UNDEFINED language verbs inflect in persons.
 
 LEXICON Persons
