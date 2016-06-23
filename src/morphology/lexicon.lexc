@@ -485,7 +485,7 @@ LEXICON R
 +Cmp#:# Nouns ;
 
 !! Adjectives
-!! ----------
+!  ----------
 !! Adjectives in UNDEFINED language describe things.
 
 LEXICON Adjectives
@@ -493,7 +493,7 @@ adjective    Comparisons   ;
 
 ! vim: set ft=xfst-lexc:
 !! Nouns
-!! -----
+!  -----
 !! Nouns in HUNGARIAN language are things.
 
 LEXICON Nouns
@@ -22078,7 +22078,7 @@ aerobik:aerobik N_HANG__n ;
 
 ! vim: set ft=xfst-lexc:
 !! Numerals
-!! --------
+!  --------
 !! Numerals in UNDEFINED language are numbers.
 
 LEXICON Numerals
@@ -22086,7 +22086,7 @@ numeral    Cases   ;
 
 ! vim: set ft=xfst-lexc:
 !! Prefixes
-!! --------
+!  --------
 !! Prefixes in UNDEFINED language are bound to beginning of other words.
 
 LEXICON Prefixes
@@ -22096,7 +22096,7 @@ verbprefix-     Verbs   ;
 
 ! vim: set ft=xfst-lexc:
 !! Pronouns
-!! --------
+!  --------
 !! Pronouns in UNDEFINED language are references to things.
 
 LEXICON Pronouns
@@ -22104,7 +22104,7 @@ pronoun    Cases   ;
 
 ! vim: set ft=xfst-lexc:
 !! Proper nouns
-!! --------
+!  --------
 !! Proper nouns in the HUNGARIAN language are references to things.
 
 LEXICON Propernouns
@@ -22262,7 +22262,7 @@ LEXICON PUNCTsuff
 ! Did not work.
 
 !! Verbs
-!! -----
+!  -----
 !! Verbs in UNDEFINED language are actions.
 
 LEXICON Verbs
