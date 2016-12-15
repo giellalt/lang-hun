@@ -20,7 +20,6 @@ INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 The morphological analyses of wordforms for the Hungarian
 language are presented in this system in terms of the following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
-
 The parts-of-speech are:
 
 The parts of speech are further split up into:
@@ -81,6 +80,14 @@ And following triggers to control variation
  *  %^RmVow        remove vowel
  *  %^V2VV         lengthen vowel
  *  %^VV2V         shorten vowel
+
+Vowel variants
+ *  %{ae%}       low vowel variants
+ *  %{aeáé%}       low vowel variants
+ *  %{áé%}	        long low vowel variants
+ *  %{eoö%}       mid vowel variants
+ *  %{óő%}	       long mid vowel variants
+ *  %{uü%}       high labial variants
 
 
 !!Flag diacritics

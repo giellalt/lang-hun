@@ -25,7 +25,7 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
 !! The morphological analyses of wordforms for the Hungarian
 !! language are presented in this system in terms of the following symbols.
 !! (It is highly suggested to follow existing standards when adding new tags).
-
+ +WORK
 !! The parts-of-speech are:
  +N +A +Adv +V                                 !!≈
  +Pron +CS +CC +Adp +Po +Pr +Interj +Pcle +Num !!≈
@@ -124,12 +124,20 @@ Multichar_Symbols  !!≈ !!!Definitions for @CODE@
  %^Ö2		!!= * @CODE@ h%^Ö2z
  %^V2         !!= * @CODE@ ház%>%^V2al : házzal
 !! And following triggers to control variation
- {front} {back}
+ %{front%} %{back%}
  %^Hist         !!= * @CODE@ historic documents
  %^Pen         !!= * @CODE@ penultimate position
  %^RmVow       !!= * @CODE@ remove vowel
  %^V2VV        !!= * @CODE@ lengthen vowel
  %^VV2V        !!= * @CODE@ shorten vowel
+
+!! Vowel variants
+ %{ae%}      !!= * @CODE@ low vowel variants
+ %{aeáé%}      !!= * @CODE@ low vowel variants
+ %{áé%}	       !!= * @CODE@ long low vowel variants
+ %{eoö%}      !!= * @CODE@ mid vowel variants
+ %{óő%}	      !!= * @CODE@ long mid vowel variants
+ %{uü%}      !!= * @CODE@ high labial variants
 
 
 !! !!Flag diacritics

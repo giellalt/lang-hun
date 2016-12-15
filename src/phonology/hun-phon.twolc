@@ -12,6 +12,10 @@ Alphabet
  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç
 
 !! TRIGGERS
+%{back%}:0
+%{front%}:0
+
+
 %^Ö2:0		!!= * @CODE@ h%^Ö2z
 %^V2:0		!!= * @CODE@ %^V2al 
 %^Hist:0         !!= * @CODE@ historic documents
@@ -19,6 +23,15 @@ Alphabet
 %^RmVow:0	!!= * @CODE@ remove vowel
 %^V2VV:0	!!= * @CODE@ lengthen vowel
 %^VV2V:0	!!= * @CODE@ shorten vowel
+
+!! Archiphones
+%{ae%}:a %{ae%}:e
+%{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é
+%{áé%}:á %{áé%}:é
+%{eoö%}:e %{eoö%}:o %{eoö%}:ö
+%{óő%}:ó %{óő%}:ő
+%{uü%}:u %{uü%}:ü
+
  %>
  ;
 
@@ -44,7 +57,7 @@ Rules
 !!€ béké0%>je
 
 "Penultimate Stem vowel shortening"
- Vx:Vy <=> _ [ Cns:+ |Cns:+ y ] %^Pen: %^VV2V: ;
+ Vx:Vy <=> _ [ Cns:+ |Cns:+ y ] (%{back%}:|%{front%}:) %^Pen: %^VV2V: ;
       where Vx in (ű Ű ő Ő ú Ú ó Ó é É í Í á Á)
       	    Vy in (ü Ü ö Ö u U o O e E i I a A)
 	    matched ;
@@ -52,56 +65,89 @@ Rules
 !!€ madár%^Pen%^VV2V%>ak
 !!€ madar00%>ak
 
-"Penultimate Stem vowel removal"
- Vx:0 <=> _ [ Cns:+ |Cns:+ y ] %^Pen: %^RmVow: ;
-      where Vx in (ü Ü ö Ö u U o O e E i I a A) ;
+"Penultimate and stem-final vowel removal"
+ Vx:0 <=> _ [%{back%}:|%{front%}:|Cns:+ (y) (%{back%}:|%{front%}:) %^Pen: ] %^RmVow: ;
+      where Vx in (ü Ü ű Ű ö Ö ő Ő u U ú Ú o O ó Ó e E i I a A) ;
 !! forradalom+N+Pl+Nom
-!!€ forradalom%^Pen%^RmVow%>ak
-!!€ forradal0m00%>ak
+!!€ forradalom%{back%}%^Pen%^RmVow%>%{ae%}k
+!!€ forradal0m000%>ak
 
-"Stem-final vowel removal"
- Vx:0 <=> _ %^RmVow: ;
-      where Vx in (ű Ű ő Ő ú Ú ó Ó u U i I) ;
 !! falu+N+Pl+Nom
 !!€ falu%^RmVow%>vak
 !!€ fal00%>vak
 
 "Assimilation to stem-final consonant"
- 0:Cx <=> Cx _ %> %^V2: ;
+ 0:Cx <=> Cx (%{back%}:|%{front%}:) _  %> %^V2: ;
      where Cx in (b c d f g j k l m n p r t v) ;
 
 "Assimilation to stem-final consonant followed by y"
- 0:Cx <=> Cx _ y %> %^V2: ;
+ 0:Cx <=> Cx _ y (%{back%}:|%{front%}:) %> %^V2: ;
     where Cx in (d l n r t) ;
 
 "Assimilation to stem-final zs cs "
  0:Cx <=> Cx _ s %> %^V2: ;
-      	  Vow ([[Cns:] - [s]]+) Cx _ %> %^V2: ;
+      	  Vow ([[Cns:] - [s]]+) Cx (%{back%}:|%{front%}:) _ %> %^V2: ;
     where Cx in (z Z c C) ;
 
 "Assimilation to stem-final sz"
- 0:s <=> s _ z %> %^V2: ;
- Vow ([[Cns:] - [c | z]]+) s _ %> %^V2: ;
+ 0:s <=> s _ z (%{back%}:|%{front%}:) %> %^V2: ;
+ Vow ([[Cns:] - [c | z]]+) s _ (%{back%}:|%{front%}:) %> %^V2: ;
 
 "v from V2"
- %^V2:v <=> [Vow: | Cns (y) %^Hist: | v ] %> _ Vow ;
+ %^V2:v <=> [Vow: (%^V2VV:) |:Vow (%^V2VV:) | Cns (y) %^Hist: | v ] (%{back%}:|%{front%}:) %> _ :Vow ;
 
-"%^Ö2 to ö"
- %^Ö2:ö <=> [:ö | :ü |:ő | :ű] (Cns:+ ) %> (%^Ö2: ) Cns: _ Cns  ;
-            [:ö | :ü |:ő | :ű] Cns:+ %> _ [n |m | d | t |k]  ;
+"%{eoö%} to ö"
+ %{eoö%}:ö <=>
+! [%{front%}:  \[ #  | %{back%}: ]* [:ö | :ü |:ő | :ű] Cns:* |[:ö | :ü |:ő | :ű] (Cns:+ ) %{front%}:] %> (%^Ö2: ) Cns: _ Cns  ;
+            [%{front%}:  \[ #  | %{back%}: ]* [:ö | :ü |:ő | :ű] Cns:+ |[:ö | :ü |:ő | :ű] Cns:+ %{front%}:] _ [n |m | d | t |k]  ;
 
-"%^Ö2 to e"
- %^Ö2:e <=> [:e | :i |:é | :í] (Cns:+ ) %> (%^Ö2: ) Cns: _ Cns  ;
-            [:e | :i |:é | :í] Cns:+ %> _ [n |m | d | t|k]  ;
+"%{eoö%} to e"
+ %{eoö%}:e <=>
+! [%{front%}:  \[ #  | %{back%}: ]* [:e | :i |:é | :í] Cns:* |[:e | :i |:é | :í] (Cns:+ ) %{front%}:] %> (%^Ö2: ) Cns: _ Cns  ;
+            [%{front%}:  \[ #  | %{back%}: ]* [:e | :i |:é | :í] Cns:+ | [:e | :i |:é | :í] Cns:+ %{front%}:] _ [n |m | d | t|k]  ;
+!! fül+N+Sg+Nom+PxPl2
+!!€ fül%{front%}%>%{ae%}t%{eoö%}k
+!!€ fül0%>etek
 
-"Deleting stem-final s in s genitive"
- s:0 <=> Vow s %>: _ ;
+"%{eoö%} to o"
+ %{eoö%}:o <=> %{back%}: \[ #  | %{front%}: ]* _ ; 
 
-!!€ primus%>s
-!!€ primus00
 
-!!€grís%>s
-!!€grís00
+"low vowel variation a e back"
+ %{ae%}:a <=> %{back%}: \[ #  | %{front%}: ]* _ ;
+!!€ ház%{back%}%>b%{ae%}n
+!!€ ház0%>ban
 
-!!$grís%>s
-!!$grís0s
+!!$ ház%{back%}%>b%{ae%}n
+!!$ ház0%>ben
+
+"low vowel variation a e front short"
+ %{ae%}:e <=> %{front%}: \[ #  | %{back%}: ]* _  ;
+
+
+
+"low vowel variation a e á é back short"
+ %{aeáé%}:a <=> %{back%}: \[ #  | %{front%}: ]* _ [#| %> ] ;
+
+"low vowel variation a e á é back long"
+ %{aeáé%}:á <=> %{back%}: \[ #  | %{front%}: ]* _ %^V2VV: ;
+
+"low vowel variation a e á é front short"
+ %{aeáé%}:e <=> %{front%}: \[ #  | %{back%}: ]* _ [#| %> ] ;
+
+"low vowel variation a e á é front long"
+ %{aeáé%}:é <=> %{front%}: \[ #  | %{back%}: ]* _ %^V2VV: ;
+
+
+"long mid vowel variation ó ő back "
+ %{óő%}:ó <=> %{back%}: \[ #  | %{front%}: ]* _  ;
+
+"long mid vowel variation ó ő front "
+ %{óő%}:ő <=> %{front%}: \[ #  | %{back%}: ]* _  ;
+
+"long high vowel variation u ü back "
+ %{uü%}:u <=> %{back%}: \[ #  | %{front%}: ]* _  ;
+
+"long high vowel variation u ü front "
+ %{uü%}:ü <=> %{front%}: \[ #  | %{back%}: ]* _  ;
+
