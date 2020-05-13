@@ -1,0 +1,16 @@
+
+
+# ========== #
+# Delimiters #
+# ========== #
+
+
+DELIMITERS = "<.>" "<!>" "<?>" "<¶>";
+
+
+LIST N = N ;
+
+
+SECTION 
+
+SELECT N ;
