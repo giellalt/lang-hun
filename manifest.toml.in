@@ -1,0 +1,9 @@
+name = "Hungarian"
+version = "@SPELLERVERSION@"
+
+[macos]
+system_pkg_id = "no.divvun.MacDivvun.hu"
+
+[windows]
+system_product_code = "F6B8DF32-6FDE-46F4-A72E-9FE599A126FC"
+msoffice_product_code = "17788529-8F2A-408F-9363-DF98252CEFF2"
