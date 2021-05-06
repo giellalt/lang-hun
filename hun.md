@@ -1,40 +1,76 @@
-Noun inflection
-The HUNGARIAN language nouns inflect in cases.
+Nouns
+Nouns in HUNGARIAN language are things.
 
 
+new code
 
 
 
+Numerals
+Numerals in the Hungarian language are numbers.
 
 
+Proper nouns
+Proper nouns in the HUNGARIAN language are references to things.
 
 
 
+Verbs
+Verbs in the Hungarian language are actions.
 
 
+Prefixes
+Prefixes in the Hungarian language are bound to beginning of other words.
 
 
 
+Adjectives
+Adjectives in the Hungarian language describe things.
 
 
+Pronouns
+Pronouns in the Hungarian language are references to things.
 
 
+=================================== !
+The Hungarian morphophonological/twolc rules file !
+=================================== !
 
 
 
+TRIGGERS
 
 
+ * %^Ö2:0		 h%^Ö2z
+ * %^V2:0		 %^V2al 
+ * %^Hist:0          historic documents
+ * %^Pen:0		 penultimate position
+ * %^RmVow:0	 remove vowel
+ * %^V2VV:0	 lengthen vowel
+ * %^VV2V:0	 shorten vowel
 
+Archiphones
 
 
 
 
 
 
- * LEXICON N_TETŐ__n  tetején
+béke+N+Sg+PxSg3
+* *béke%^V2VV%>je*
+* *béké0%>je*
 
+madár+N+Pl+Nom
+* *madár%^Pen%^VV2V%>ak*
+* *madar00%>ak*
 
+forradalom+N+Pl+Nom
+* *forradalom%{back%}%^Pen%^RmVow%>%{ae%}k*
+* *forradal0m000%>ak*
 
+falu+N+Pl+Nom
+* *falu%^RmVow%>vak*
+* *fal00%>vak*
 
 
 
@@ -42,10 +78,17 @@ The HUNGARIAN language nouns inflect in cases.
 
 
 
+fül+N+Sg+Nom+PxPl2
+* *fül%{front%}%>%{ae%}t%{eoö%}k*
+* *fül0%>etek*
 
 
 
+* *ház%{back%}%>b%{ae%}n*
+* *ház0%>ban*
 
+* ★*ház%{back%}%>b%{ae%}n* (is not standard language)
+* ★*ház0%>ben* (is not standard language)
 
 
 
@@ -56,49 +99,6 @@ The HUNGARIAN language nouns inflect in cases.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Proper noun inflection
-The HUNGARIAN language proper nouns inflect in the same cases as regular
-nouns, but with a colon (':') as separator.
-
-
-
-
-
-
-# Symbol affixes
-
-
-
-
-
-Adjective inflection
-The Hungarian language adjectives compare.
-
-
-
-Verb inflection
-The Hungarian language verbs inflect in persons.
 
 
 
@@ -318,63 +318,15 @@ Verbs
 Verbs in UNDEFINED language are actions.
 
 
-=================================== !
-The Hungarian morphophonological/twolc rules file !
-=================================== !
 
-
-
-TRIGGERS
-
-
- * %^Ö2:0		 h%^Ö2z
- * %^V2:0		 %^V2al 
- * %^Hist:0          historic documents
- * %^Pen:0		 penultimate position
- * %^RmVow:0	 remove vowel
- * %^V2VV:0	 lengthen vowel
- * %^VV2V:0	 shorten vowel
-
-Archiphones
+# Symbol affixes
 
 
 
 
 
-
-béke+N+Sg+PxSg3
-* *béke%^V2VV%>je*
-* *béké0%>je*
-
-madár+N+Pl+Nom
-* *madár%^Pen%^VV2V%>ak*
-* *madar00%>ak*
-
-forradalom+N+Pl+Nom
-* *forradalom%{back%}%^Pen%^RmVow%>%{ae%}k*
-* *forradal0m000%>ak*
-
-falu+N+Pl+Nom
-* *falu%^RmVow%>vak*
-* *fal00%>vak*
-
-
-
-
-
-
-
-fül+N+Sg+Nom+PxPl2
-* *fül%{front%}%>%{ae%}t%{eoö%}k*
-* *fül0%>etek*
-
-
-
-* *ház%{back%}%>b%{ae%}n*
-* *ház0%>ban*
-
-* ★*ház%{back%}%>b%{ae%}n* (is not standard language)
-* ★*ház0%>ben* (is not standard language)
+Noun inflection
+The HUNGARIAN language nouns inflect in cases.
 
 
 
@@ -385,6 +337,88 @@ fül+N+Sg+Nom+PxPl2
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ * LEXICON N_TETŐ__n  tetején
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Proper noun inflection
+The HUNGARIAN language proper nouns inflect in the same cases as regular
+nouns, but with a colon (':') as separator.
+
+
+
+
+
+Verb inflection
+The Hungarian language verbs inflect in persons.
+
+
+
+Adjective inflection
+The Hungarian language adjectives compare.
 
 
 
@@ -506,38 +540,20 @@ The word forms in Hungarian language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
 
-Nouns
-Nouns in HUNGARIAN language are things.
-
-
-new code
 
 
 
-Proper nouns
-Proper nouns in the HUNGARIAN language are references to things.
+We describe here how abbreviations are in Hungarian are read out, e.g.
+for text-to-speech systems.
 
+For example:
 
-
-Prefixes
-Prefixes in the Hungarian language are bound to beginning of other words.
-
-
-
-Pronouns
-Pronouns in the Hungarian language are references to things.
-
-
-Adjectives
-Adjectives in the Hungarian language describe things.
-
-
-Verbs
-Verbs in the Hungarian language are actions.
-
-
-Numerals
-Numerals in the Hungarian language are numbers.
+ * s.:syntynyt # ;  
+ * os.:omaa% sukua # ;  
+ * v.:vuosi # ;  
+ * v.:vuonna # ;  
+ * esim.:esimerkki # ; 
+ * esim.:esimerkiksi # ; 
 
 
 
@@ -593,20 +609,4 @@ Numerals in the Hungarian language are numbers.
 % kolon% :%:     Root ;
 % sárggis% :%-   Root ; 
 % násti% :%*     Root ; 
-
-
-
-
-We describe here how abbreviations are in Hungarian are read out, e.g.
-for text-to-speech systems.
-
-For example:
-
- * s.:syntynyt # ;  
- * os.:omaa% sukua # ;  
- * v.:vuosi # ;  
- * v.:vuonna # ;  
- * esim.:esimerkki # ; 
- * esim.:esimerkiksi # ; 
-
 
