@@ -1,21 +1,23 @@
 !! =================================== !
-!! The Hungarian morphophonological/twolc rules file !
+!! # The Hungarian morphophonological/twolc rules file 
 !! =================================== !
 
-Alphabet
- a b c d e f g h i j k l m n o p q r s t u v w x y z
- á é ó ú í ö ü ő ű
- æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç
+!! This file documents the [phonology.twolc file](http://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc) 
 
- A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
- Á É Ó Ú Í Ö Ü Ő Ű
- Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç
+!! ## Alphabets and sets
+
+Alphabet
+ a b c d e f g h i j k l m n o p q r s t u v w x y z !!= * @CODE@ 
+ á é ó ú í ö ü ő ű !!=   @CODE@ 
+ æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç !!=   @CODE@ 
+
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z !!= * @CODE@ 
+ Á É Ó Ú Í Ö Ü Ő Ű !!=  @CODE@ 
+ Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç !!= * @CODE@ 
 
 !! TRIGGERS
-%{back%}:0
-%{front%}:0
-
-
+%{back%}:0 !!= * @CODE@ 
+%{front%}:0 !!= * @CODE@ 
 %^Ö2:0		!!= * @CODE@ h%^Ö2z
 %^V2:0		!!= * @CODE@ %^V2al 
 %^Hist:0         !!= * @CODE@ historic documents
@@ -25,29 +27,31 @@ Alphabet
 %^VV2V:0	!!= * @CODE@ shorten vowel
 
 !! Archiphones
-%{ae%}:a %{ae%}:e
-%{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é
-%{áé%}:á %{áé%}:é
-%{eoö%}:e %{eoö%}:o %{eoö%}:ö
-%{óő%}:ó %{óő%}:ő
-%{uü%}:u %{uü%}:ü
-
- %>
+%{ae%}:a %{ae%}:e !!= * @CODE@ 
+%{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é !!= * @CODE@ 
+%{áé%}:á %{áé%}:é !!= * @CODE@ 
+%{eoö%}:e %{eoö%}:o %{eoö%}:ö !!= * @CODE@ 
+%{óő%}:ó %{óő%}:ő !!= * @CODE@ 
+%{uü%}:u %{uü%}:ü !!= * @CODE@ 
+ %> !!= * @CODE@ 
  ;
 
+!! Sets
 Sets
 
- Vow = a e i o u á é ó ú í ő ű ö ü
-       A E I O U Á É Ó Ú Í Ő Ű Ö Ü
-       æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;
- VowAndY = Vow y Y ;
+ Vow = a e i o u á é ó ú í ő ű ö ü !!= * @CODE@ 
+       A E I O U Á É Ó Ú Í Ő Ű Ö Ü !!=  @CODE@ 
+       æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ; !!=  @CODE@ 
+ VowAndY = Vow y Y ; !!= * @CODE@ 
 
- Cns = b c d f g h j k l m n p q r s t v w x z ð þ 
-       B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;
+ Cns = b c d f g h j k l m n p q r s t v w x z ð þ  !!= * @CODE@ 
+       B C D F G H J K L M N P Q R S T V W X Z Ð Þ ; !!=  @CODE@ 
  
+!! ## Rules 
 Rules
 
 "Stem-final vowel lengthening"
+!! Rule: **@RULENAME@** 
  Vx:Vy <=> _ %^V2VV: %> ;
      where Vx in (a A e E)
            Vy in (á Á é É)
@@ -57,6 +61,7 @@ Rules
 !!€ béké0%>je
 
 "Penultimate Stem vowel shortening"
+!! Rule: **@RULENAME@** 
  Vx:Vy <=> _ [ Cns:+ |Cns:+ y ] (%{back%}:|%{front%}:) %^Pen: %^VV2V: ;
       where Vx in (ű Ű ő Ő ú Ú ó Ó é É í Í á Á)
       	    Vy in (ü Ü ö Ö u U o O e E i I a A)
@@ -66,6 +71,7 @@ Rules
 !!€ madar00%>ak
 
 "Penultimate and stem-final vowel removal"
+!! Rule: **@RULENAME@** 
  Vx:0 <=> _ [%{back%}:|%{front%}:|Cns:+ (y) (%{back%}:|%{front%}:) %^Pen: ] %^RmVow: ;
       where Vx in (ü Ü ű Ű ö Ö ő Ő u U ú Ú o O ó Ó e E i I a A) ;
 !! forradalom+N+Pl+Nom
@@ -77,23 +83,28 @@ Rules
 !!€ fal00%>vak
 
 "Assimilation to stem-final consonant"
+!! Rule: **@RULENAME@** 
  0:Cx <=> Cx (%{back%}:|%{front%}:) _  %> %^V2: ;
      where Cx in (b c d f g j k l m n p r t v) ;
 
 "Assimilation to stem-final consonant followed by y"
+!! Rule: **@RULENAME@** 
  0:Cx <=> Cx _ y (%{back%}:|%{front%}:) %> %^V2: ;
     where Cx in (d l n r t) ;
 
 "Assimilation to stem-final zs cs "
+!! Rule: **@RULENAME@** 
  0:Cx <=> Cx _ s %> %^V2: ;
       	  Vow ([[Cns:] - [s]]+) Cx (%{back%}:|%{front%}:) _ %> %^V2: ;
     where Cx in (z Z c C) ;
 
 "Assimilation to stem-final sz"
+!! Rule: **@RULENAME@** 
  0:s <=> s _ z (%{back%}:|%{front%}:) %> %^V2: ;
  Vow ([[Cns:] - [c | z]]+) s _ (%{back%}:|%{front%}:) %> %^V2: ;
 
 "v from V2"
+!! Rule: **@RULENAME@** 
  %^V2:v <=> [Vow: (%^V2VV:) |:Vow (%^V2VV:) | Cns (y) %^Hist: | v ] (%{back%}:|%{front%}:) %> _ :Vow ;
 
 "%{eoö%} to ö"
@@ -110,10 +121,12 @@ Rules
 !!€ fül0%>etek
 
 "%{eoö%} to o"
+!! Rule: **@RULENAME@** 
  %{eoö%}:o <=> %{back%}: \[ #  | %{front%}: ]* _ ; 
 
 
 "low vowel variation a e back"
+!! Rule: **@RULENAME@** 
  %{ae%}:a <=> %{back%}: \[ #  | %{front%}: ]* _ ;
 !!€ ház%{back%}%>b%{ae%}n
 !!€ ház0%>ban
@@ -122,32 +135,41 @@ Rules
 !!$ ház0%>ben
 
 "low vowel variation a e front short"
+!! Rule: **@RULENAME@** 
  %{ae%}:e <=> %{front%}: \[ #  | %{back%}: ]* _  ;
 
 
 
 "low vowel variation a e á é back short"
+!! Rule: **@RULENAME@** 
  %{aeáé%}:a <=> %{back%}: \[ #  | %{front%}: ]* _ [#| %> ] ;
 
 "low vowel variation a e á é back long"
+!! Rule: **@RULENAME@** 
  %{aeáé%}:á <=> %{back%}: \[ #  | %{front%}: ]* _ %^V2VV: ;
 
 "low vowel variation a e á é front short"
+!! Rule: **@RULENAME@** 
  %{aeáé%}:e <=> %{front%}: \[ #  | %{back%}: ]* _ [#| %> ] ;
 
 "low vowel variation a e á é front long"
+!! Rule: **@RULENAME@** 
  %{aeáé%}:é <=> %{front%}: \[ #  | %{back%}: ]* _ %^V2VV: ;
 
 
 "long mid vowel variation ó ő back "
+!! Rule: **@RULENAME@** 
  %{óő%}:ó <=> %{back%}: \[ #  | %{front%}: ]* _  ;
 
 "long mid vowel variation ó ő front "
+!! Rule: **@RULENAME@** 
  %{óő%}:ő <=> %{front%}: \[ #  | %{back%}: ]* _  ;
 
 "long high vowel variation u ü back "
+!! Rule: **@RULENAME@** 
  %{uü%}:u <=> %{back%}: \[ #  | %{front%}: ]* _  ;
 
 "long high vowel variation u ü front "
+!! Rule: **@RULENAME@** 
  %{uü%}:ü <=> %{front%}: \[ #  | %{back%}: ]* _  ;
 
