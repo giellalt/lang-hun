@@ -116,3 +116,5 @@ The word forms in Hungarian language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/root.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/root.lexc)</small>
