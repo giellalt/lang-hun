@@ -720,116 +720,48 @@ Rule: **long high vowel variation u ü back **
 Rule: **long high vowel variation u ü front ** 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/phonology.twolc)</small>Verb inflection
-The Hungarian language verbs inflect in persons.
+<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/phonology.twolc)</small>Nouns
+Nouns in HUNGARIAN language are things.
+
+
+new code
 
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/verbs.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/verbs.lexc)</small>Proper noun inflection
-The HUNGARIAN language proper nouns inflect in the same cases as regular
-nouns, but with a colon (':') as separator.
+<small>This (part of) documentation was generated from [../src/fst/stems/nouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/nouns.lexc)</small>Numerals
+Numerals in the Hungarian language are numbers.
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/numerals.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/numerals.lexc)</small>Adjectives
+Adjectives in the Hungarian language describe things.
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/adjectives.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/adjectives.lexc)</small>Prefixes
+Prefixes in the Hungarian language are bound to beginning of other words.
 
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/propernouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/propernouns.lexc)</small>Noun inflection
-The HUNGARIAN language nouns inflect in cases.
+<small>This (part of) documentation was generated from [../src/fst/stems/prefixes.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/prefixes.lexc)</small>Pronouns
+Pronouns in the Hungarian language are references to things.
 
 
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/pronouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/pronouns.lexc)</small>Verbs
+Verbs in the Hungarian language are actions.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- * LEXICON N_TETŐ__n  tetején
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/verbs.lexc)</small>Proper nouns
+Proper nouns in the HUNGARIAN language are references to things.
 
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/nouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/nouns.lexc)</small>
-# Symbol affixes
-
-
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/symbols.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/symbols.lexc)</small>Adjective inflection
-The Hungarian language adjectives compare.
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/adjectives.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/adjectives.lexc)</small>
+<small>This (part of) documentation was generated from [../src/fst/stems/propernouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/propernouns.lexc)</small>
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
 
@@ -1046,48 +978,7 @@ Verbs in UNDEFINED language are actions.
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/lexicon.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/lexicon.lexc)</small>Pronouns
-Pronouns in the Hungarian language are references to things.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/pronouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/pronouns.lexc)</small>Numerals
-Numerals in the Hungarian language are numbers.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/numerals.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/numerals.lexc)</small>Verbs
-Verbs in the Hungarian language are actions.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/verbs.lexc)</small>Prefixes
-Prefixes in the Hungarian language are bound to beginning of other words.
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/prefixes.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/prefixes.lexc)</small>Proper nouns
-Proper nouns in the HUNGARIAN language are references to things.
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/propernouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/propernouns.lexc)</small>Nouns
-Nouns in HUNGARIAN language are things.
-
-
-new code
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/nouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/nouns.lexc)</small>Adjectives
-Adjectives in the Hungarian language describe things.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/adjectives.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/adjectives.lexc)</small>
+<small>This (part of) documentation was generated from [../src/fst/lexicon.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/lexicon.lexc)</small>
 # Hungarian morphological analyser                      !
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
@@ -1207,6 +1098,115 @@ word classes, or optionally from prefixes:
 
 * * *
 <small>This (part of) documentation was generated from [../src/fst/root.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/root.lexc)</small>
+# Symbol affixes
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/symbols.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/symbols.lexc)</small>Noun inflection
+The HUNGARIAN language nouns inflect in cases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ * LEXICON N_TETŐ__n  tetején
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/nouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/nouns.lexc)</small>Adjective inflection
+The Hungarian language adjectives compare.
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/adjectives.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/adjectives.lexc)</small>Verb inflection
+The Hungarian language verbs inflect in persons.
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/verbs.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/verbs.lexc)</small>Proper noun inflection
+The HUNGARIAN language proper nouns inflect in the same cases as regular
+nouns, but with a colon (':') as separator.
+
+
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/affixes/propernouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/propernouns.lexc)</small>
 
 
 We describe here how abbreviations are in Hungarian are read out, e.g.
