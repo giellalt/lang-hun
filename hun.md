@@ -606,384 +606,12 @@ These were the set types.
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/cg3/functions.cg3](http://github.com/giellalt/lang-hun/blob/main/../src/cg3/functions.cg3)</small>=================================== !
-# The Hungarian morphophonological/twolc rules file 
-=================================== !
-
-This file documents the [phonology.twolc file](http://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc) 
-
-## Alphabets and sets
-
- *  a b c d e f g h i j k l m n o p q r s t u v w x y z  
-    á é ó ú í ö ü ő ű  
-    æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç  
-
- *  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
-   Á É Ó Ú Í Ö Ü Ő Ű  
- *  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç  
-
-TRIGGERS
- * %{back%}:0  
- * %{front%}:0  
- * %^Ö2:0		 h%^Ö2z
- * %^V2:0		 %^V2al 
- * %^Hist:0          historic documents
- * %^Pen:0		 penultimate position
- * %^RmVow:0	 remove vowel
- * %^V2VV:0	 lengthen vowel
- * %^VV2V:0	 shorten vowel
-
-Archiphones
- * %{ae%}:a %{ae%}:e  
- * %{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é  
- * %{áé%}:á %{áé%}:é  
- * %{eoö%}:e %{eoö%}:o %{eoö%}:ö  
- * %{óő%}:ó %{óő%}:ő  
- * %{uü%}:u %{uü%}:ü  
- *  %>  
-
-Sets
-
- *  Vow = a e i o u á é ó ú í ő ű ö ü  
-         A E I O U Á É Ó Ú Í Ő Ű Ö Ü  
-         æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;  
- *  VowAndY = Vow y Y ;  
-
- *  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
-         B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
-
-## Rules 
-
-Rule: **Stem-final vowel lengthening** 
-béke+N+Sg+PxSg3
-* *béke%^V2VV%>je*
-* *béké0%>je*
-
-Rule: **Penultimate Stem vowel shortening** 
-madár+N+Pl+Nom
-* *madár%^Pen%^VV2V%>ak*
-* *madar00%>ak*
-
-Rule: **Penultimate and stem-final vowel removal** 
-forradalom+N+Pl+Nom
-* *forradalom%{back%}%^Pen%^RmVow%>%{ae%}k*
-* *forradal0m000%>ak*
-
-falu+N+Pl+Nom
-* *falu%^RmVow%>vak*
-* *fal00%>vak*
-
-Rule: **Assimilation to stem-final consonant** 
-
-Rule: **Assimilation to stem-final consonant followed by y** 
-
-Rule: **Assimilation to stem-final zs cs ** 
-
-Rule: **Assimilation to stem-final sz** 
-
-Rule: **v from V2** 
-
-
-fül+N+Sg+Nom+PxPl2
-* *fül%{front%}%>%{ae%}t%{eoö%}k*
-* *fül0%>etek*
-
-Rule: **%{eoö%} to o** 
-
-
-Rule: **low vowel variation a e back** 
-* *ház%{back%}%>b%{ae%}n*
-* *ház0%>ban*
-
-* ★*ház%{back%}%>b%{ae%}n* (is not standard language)
-* ★*ház0%>ben* (is not standard language)
-
-Rule: **low vowel variation a e front short** 
-
-
-
-Rule: **low vowel variation a e á é back short** 
-
-Rule: **low vowel variation a e á é back long** 
-
-Rule: **low vowel variation a e á é front short** 
-
-Rule: **low vowel variation a e á é front long** 
-
-
-Rule: **long mid vowel variation ó ő back ** 
-
-Rule: **long mid vowel variation ó ő front ** 
-
-Rule: **long high vowel variation u ü back ** 
-
-Rule: **long high vowel variation u ü front ** 
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/phonology.twolc)</small>Nouns
-Nouns in HUNGARIAN language are things.
-
-
-new code
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/nouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/nouns.lexc)</small>Numerals
-Numerals in the Hungarian language are numbers.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/numerals.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/numerals.lexc)</small>Adjectives
-Adjectives in the Hungarian language describe things.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/adjectives.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/adjectives.lexc)</small>Prefixes
-Prefixes in the Hungarian language are bound to beginning of other words.
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/prefixes.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/prefixes.lexc)</small>Pronouns
-Pronouns in the Hungarian language are references to things.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/pronouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/pronouns.lexc)</small>Verbs
-Verbs in the Hungarian language are actions.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/verbs.lexc)</small>Proper nouns
-Proper nouns in the HUNGARIAN language are references to things.
-
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/stems/propernouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/propernouns.lexc)</small>
-INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
-
-
- # Definitions for Multichar_Symbols
-
-## Analysis symbols
-The morphological analyses of wordforms for the Hungarian
-language are presented in this system in terms of the following symbols.
-(It is highly suggested to follow existing standards when adding new tags).
-
-The parts-of-speech are:
-
-The parts of speech are further split up into:
-
-The Usage extents are marked using following tags:
-
-The nominals are inflected in the following Case and Number
-
- *  +Abl	  Ablative
- *  +Acc	  Accusative
- *  +Ade	  Adessive
- *  +All	  Allative
- *  +Cau	  Causative
- *  +Del	  Delative
- *  +Ela	  Elative
- *  +Ess/F	  Formal-Essive
- *  +Ess/M	  Modal-Essive
- *  +Ill 	  Illative
- *  +Ine	  Inessive
- *  +Ins	  Instrumental
- *  +Nom	  Nominative
- *  +Ses	  Superessive
- *  +Sla	  Sublative
- *  +Ter	  Terminative
- *  +Tra	  Translative
-
-
-
-The possession is marked as such:
-The comparative forms are:
-Numerals are classified under:
-Verb moods are:
-Verb personal forms are:
-Other verb forms are
-
-Special symbols are classified with:
-The verbs are syntactically split according to transitivity:
-Special multiword units are analysed with:
-Non-dictionary words can be recognised with:
-
-Question and Focus particles:
-
-
-Semantics are classified with
-
-
-Derivations are classified under the morphophonetic form of the suffix, the
-source and target part-of-speech.
-
-Morphophonology
-To represent phonologic variations in word forms we use the following
-symbols in the lexicon files:
- *  %^Ö2		 h%^Ö2z
- *  %^V2          ház%>%^V2al : házzal
-And following triggers to control variation
- *  %^Hist          historic documents
- *  %^Pen          penultimate position
- *  %^RmVow        remove vowel
- *  %^V2VV         lengthen vowel
- *  %^VV2V         shorten vowel
-
-
-## Flag diacritics
-POSSESSOR INDICES or POSSESSIVE SUFFIXES
-FRONT/BACK VOWEL HARMONY
- |  @C.VOWEL-HARMONY@ | used at word boundary
-
-We have manually optimised the structure of our lexicon using following
-flag diacritics to restrict morhpological combinatorics - only allow compounds
-with verbs if the verb is further derived into a noun again:
- |  @P.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
- |  @D.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
- |  @C.NeedNoun@ | (Dis)allow compounds with verbs unless nominalised
-
-For languages that allow compounding, the following flag diacritics are needed
-to control position-based compounding restrictions for nominals. Their use is
-handled automatically if combined with +CmpN/xxx tags. If not used, they will
-do no harm.
- |  @P.CmpFrst.FALSE@ | Require that words tagged as such only appear first
- |  @D.CmpPref.TRUE@ | Block such words from entering ENDLEX
- |  @P.CmpPref.FALSE@ | Block these words from making further compounds
- |  @D.CmpLast.TRUE@ | Block such words from entering R
- |  @D.CmpNone.TRUE@ | Combines with the next tag to prohibit compounding
- |  @U.CmpNone.FALSE@ | Combines with the prev tag to prohibit compounding
- |  @P.CmpOnly.TRUE@ | Sets a flag to indicate that the word has passed R
- |  @D.CmpOnly.FALSE@ | Disallow words coming directly from root.
-
-Use the following flag diacritics to control downcasing of derived proper
-nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
-these flags. There exists a ready-made regex that will do the actual down-casing
-given the proper use of these flags.
- |  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
- |  @U.Cap.Opt@ | Allowing downcasing of derived names: deatnulasj.
-
-The word forms in UNDEFINED language start from the lexeme roots of basic
-word classes, or optionally from prefixes:
-
-
-Adjective inflection
-The UNDEFINED language adjectives compare.
-
-
-
-Noun inflection
-The HUNGARIAN language nouns inflect in cases.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Proper noun inflection
-The HUNGARIAN language proper nouns inflect in the same cases as regular
-nouns, but with a colon (':') as separator.
-
-
-
-
-
-Verb inflection
-The UNDEFINED language verbs inflect in persons.
-
-
-
-
-
-
-Adjectives
-Adjectives in UNDEFINED language describe things.
-
-
-Nouns
-Nouns in HUNGARIAN language are things.
-
-
-new code
-
-
-
-Numerals
-Numerals in UNDEFINED language are numbers.
-
-
-Prefixes
-Prefixes in UNDEFINED language are bound to beginning of other words.
-
-
-
-Pronouns
-Pronouns in UNDEFINED language are references to things.
-
-
-Proper nouns
-Proper nouns in the HUNGARIAN language are references to things.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Verbs
-Verbs in UNDEFINED language are actions.
-
-
-* * *
-<small>This (part of) documentation was generated from [../src/fst/lexicon.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/lexicon.lexc)</small>
+<small>This (part of) documentation was generated from [../src/cg3/functions.cg3](http://github.com/giellalt/lang-hun/blob/main/../src/cg3/functions.cg3)</small>
 # Hungarian morphological analyser                      !
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
 
- # Definitions for Multichar_Symbols
+# Definitions for Multichar_Symbols@CODE@
 
 ## Analysis symbols
 The morphological analyses of wordforms for the Hungarian
@@ -1024,7 +652,7 @@ Verb moods are:
 Verb personal forms are:
 Other verb forms are
 
- * +Symbol = independent symbols in the text stream, like £, €, ©
+* +Symbol© = independent symbols in the text stream, like £, €, ©
 Special symbols are classified with:
 The verbs are syntactically split according to transitivity:
 Special multiword units are analysed with:
@@ -1063,34 +691,34 @@ Vowel variants
 ## Flag diacritics
 POSSESSOR INDICES or POSSESSIVE SUFFIXES
 FRONT/BACK VOWEL HARMONY
- |  @C.VOWEL-HARMONY@ | used at word boundary
+|  @C.VOWEL-HARMONY@boundary | used at word boundary
 
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics - only allow compounds
 with verbs if the verb is further derived into a noun again:
- |  @P.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
- |  @D.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
- |  @C.NeedNoun@ | (Dis)allow compounds with verbs unless nominalised
+|  @P.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
+|  @D.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
+|  @C.NeedNoun@nominalised | (Dis)allow compounds with verbs unless nominalised
 
 For languages that allow compounding, the following flag diacritics are needed
 to control position-based compounding restrictions for nominals. Their use is
 handled automatically if combined with +CmpN/xxx tags. If not used, they will
 do no harm.
- |  @P.CmpFrst.FALSE@ | Require that words tagged as such only appear first
- |  @D.CmpPref.TRUE@ | Block such words from entering ENDLEX
- |  @P.CmpPref.FALSE@ | Block these words from making further compounds
- |  @D.CmpLast.TRUE@ | Block such words from entering R
- |  @D.CmpNone.TRUE@ | Combines with the next tag to prohibit compounding
- |  @U.CmpNone.FALSE@ | Combines with the prev tag to prohibit compounding
- |  @P.CmpOnly.TRUE@ | Sets a flag to indicate that the word has passed R
- |  @D.CmpOnly.FALSE@ | Disallow words coming directly from root.
+|  @P.CmpFrst.FALSE@first | Require that words tagged as such only appear first
+|  @D.CmpPref.TRUE@ENDLEX | Block such words from entering ENDLEX
+|  @P.CmpPref.FALSE@compounds | Block these words from making further compounds
+|  @D.CmpLast.TRUE@R | Block such words from entering R
+|  @D.CmpNone.TRUE@compounding | Combines with the next tag to prohibit compounding
+|  @U.CmpNone.FALSE@compounding | Combines with the prev tag to prohibit compounding
+|  @P.CmpOnly.TRUE@R | Sets a flag to indicate that the word has passed R
+|  @D.CmpOnly.FALSE@root. | Disallow words coming directly from root.
 
 Use the following flag diacritics to control downcasing of derived proper
 nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
 these flags. There exists a ready-made regex that will do the actual down-casing
 given the proper use of these flags.
- |  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
- |  @U.Cap.Opt@ | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Obl@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Opt@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
 
 The word forms in Hungarian language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
@@ -1206,7 +834,379 @@ nouns, but with a colon (':') as separator.
 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/affixes/propernouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/propernouns.lexc)</small>
+<small>This (part of) documentation was generated from [../src/fst/affixes/propernouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/affixes/propernouns.lexc)</small>=================================== !
+# The Hungarian morphophonological/twolc rules file 
+=================================== !
+
+This file documents the [phonology.twolc file](http://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc) 
+
+## Alphabets and sets
+
+ *  a b c d e f g h i j k l m n o p q r s t u v w x y z  
+    á é ó ú í ö ü ő ű  
+    æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç  
+
+ *  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
+   Á É Ó Ú Í Ö Ü Ő Ű  
+ *  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç  
+
+TRIGGERS
+ * %{back%}:0  
+ * %{front%}:0  
+ * %^Ö2:0		 h%^Ö2z
+ * %^V2:0		 %^V2al 
+ * %^Hist:0          historic documents
+ * %^Pen:0		 penultimate position
+ * %^RmVow:0	 remove vowel
+ * %^V2VV:0	 lengthen vowel
+ * %^VV2V:0	 shorten vowel
+
+Archiphones
+ * %{ae%}:a %{ae%}:e  
+ * %{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é  
+ * %{áé%}:á %{áé%}:é  
+ * %{eoö%}:e %{eoö%}:o %{eoö%}:ö  
+ * %{óő%}:ó %{óő%}:ő  
+ * %{uü%}:u %{uü%}:ü  
+ *  %>  
+
+Sets
+
+ *  Vow = a e i o u á é ó ú í ő ű ö ü  
+         A E I O U Á É Ó Ú Í Ő Ű Ö Ü  
+         æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;  
+ *  VowAndY = Vow y Y ;  
+
+ *  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
+         B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
+
+## Rules 
+
+Rule: **Stem-final vowel lengthening** 
+béke+N+Sg+PxSg3
+* *béke%^V2VV%>je*
+* *béké0%>je*
+
+Rule: **Penultimate Stem vowel shortening** 
+madár+N+Pl+Nom
+* *madár%^Pen%^VV2V%>ak*
+* *madar00%>ak*
+
+Rule: **Penultimate and stem-final vowel removal** 
+forradalom+N+Pl+Nom
+* *forradalom%{back%}%^Pen%^RmVow%>%{ae%}k*
+* *forradal0m000%>ak*
+
+falu+N+Pl+Nom
+* *falu%^RmVow%>vak*
+* *fal00%>vak*
+
+Rule: **Assimilation to stem-final consonant** 
+
+Rule: **Assimilation to stem-final consonant followed by y** 
+
+Rule: **Assimilation to stem-final zs cs ** 
+
+Rule: **Assimilation to stem-final sz** 
+
+Rule: **v from V2** 
+
+
+fül+N+Sg+Nom+PxPl2
+* *fül%{front%}%>%{ae%}t%{eoö%}k*
+* *fül0%>etek*
+
+Rule: **%{eoö%} to o** 
+
+
+Rule: **low vowel variation a e back** 
+* *ház%{back%}%>b%{ae%}n*
+* *ház0%>ban*
+
+* ★*ház%{back%}%>b%{ae%}n* (is not standard language)
+* ★*ház0%>ben* (is not standard language)
+
+Rule: **low vowel variation a e front short** 
+
+
+
+Rule: **low vowel variation a e á é back short** 
+
+Rule: **low vowel variation a e á é back long** 
+
+Rule: **low vowel variation a e á é front short** 
+
+Rule: **low vowel variation a e á é front long** 
+
+
+Rule: **long mid vowel variation ó ő back ** 
+
+Rule: **long mid vowel variation ó ő front ** 
+
+Rule: **long high vowel variation u ü back ** 
+
+Rule: **long high vowel variation u ü front ** 
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/phonology.twolc)</small>
+INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
+
+
+# Definitions for Multichar_Symbols@CODE@
+
+## Analysis symbols
+The morphological analyses of wordforms for the Hungarian
+language are presented in this system in terms of the following symbols.
+(It is highly suggested to follow existing standards when adding new tags).
+
+The parts-of-speech are:
+
+The parts of speech are further split up into:
+
+The Usage extents are marked using following tags:
+
+The nominals are inflected in the following Case and Number
+
+ *  +Abl	  Ablative
+ *  +Acc	  Accusative
+ *  +Ade	  Adessive
+ *  +All	  Allative
+ *  +Cau	  Causative
+ *  +Del	  Delative
+ *  +Ela	  Elative
+ *  +Ess/F	  Formal-Essive
+ *  +Ess/M	  Modal-Essive
+ *  +Ill 	  Illative
+ *  +Ine	  Inessive
+ *  +Ins	  Instrumental
+ *  +Nom	  Nominative
+ *  +Ses	  Superessive
+ *  +Sla	  Sublative
+ *  +Ter	  Terminative
+ *  +Tra	  Translative
+
+
+
+The possession is marked as such:
+The comparative forms are:
+Numerals are classified under:
+Verb moods are:
+Verb personal forms are:
+Other verb forms are
+
+Special symbols are classified with:
+The verbs are syntactically split according to transitivity:
+Special multiword units are analysed with:
+Non-dictionary words can be recognised with:
+
+Question and Focus particles:
+
+
+Semantics are classified with
+
+
+Derivations are classified under the morphophonetic form of the suffix, the
+source and target part-of-speech.
+
+Morphophonology
+To represent phonologic variations in word forms we use the following
+symbols in the lexicon files:
+ *  %^Ö2		 h%^Ö2z
+ *  %^V2          ház%>%^V2al : házzal
+And following triggers to control variation
+ *  %^Hist          historic documents
+ *  %^Pen          penultimate position
+ *  %^RmVow        remove vowel
+ *  %^V2VV         lengthen vowel
+ *  %^VV2V         shorten vowel
+
+
+## Flag diacritics
+POSSESSOR INDICES or POSSESSIVE SUFFIXES
+FRONT/BACK VOWEL HARMONY
+|  @C.VOWEL-HARMONY@boundary | used at word boundary
+
+We have manually optimised the structure of our lexicon using following
+flag diacritics to restrict morhpological combinatorics - only allow compounds
+with verbs if the verb is further derived into a noun again:
+|  @P.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
+|  @D.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
+|  @C.NeedNoun@nominalised | (Dis)allow compounds with verbs unless nominalised
+
+For languages that allow compounding, the following flag diacritics are needed
+to control position-based compounding restrictions for nominals. Their use is
+handled automatically if combined with +CmpN/xxx tags. If not used, they will
+do no harm.
+|  @P.CmpFrst.FALSE@first | Require that words tagged as such only appear first
+|  @D.CmpPref.TRUE@ENDLEX | Block such words from entering ENDLEX
+|  @P.CmpPref.FALSE@compounds | Block these words from making further compounds
+|  @D.CmpLast.TRUE@R | Block such words from entering R
+|  @D.CmpNone.TRUE@compounding | Combines with the next tag to prohibit compounding
+|  @U.CmpNone.FALSE@compounding | Combines with the prev tag to prohibit compounding
+|  @P.CmpOnly.TRUE@R | Sets a flag to indicate that the word has passed R
+|  @D.CmpOnly.FALSE@root. | Disallow words coming directly from root.
+
+Use the following flag diacritics to control downcasing of derived proper
+nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
+these flags. There exists a ready-made regex that will do the actual down-casing
+given the proper use of these flags.
+|  @U.Cap.Obl@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Opt@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
+
+The word forms in UNDEFINED language start from the lexeme roots of basic
+word classes, or optionally from prefixes:
+
+
+Adjective inflection
+The UNDEFINED language adjectives compare.
+
+
+
+Noun inflection
+The HUNGARIAN language nouns inflect in cases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Proper noun inflection
+The HUNGARIAN language proper nouns inflect in the same cases as regular
+nouns, but with a colon (':') as separator.
+
+
+
+
+
+Verb inflection
+The UNDEFINED language verbs inflect in persons.
+
+
+
+
+
+
+Adjectives
+Adjectives in UNDEFINED language describe things.
+
+
+Nouns
+Nouns in HUNGARIAN language are things.
+
+
+new code
+
+
+
+Numerals
+Numerals in UNDEFINED language are numbers.
+
+
+Prefixes
+Prefixes in UNDEFINED language are bound to beginning of other words.
+
+
+
+Pronouns
+Pronouns in UNDEFINED language are references to things.
+
+
+Proper nouns
+Proper nouns in the HUNGARIAN language are references to things.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Verbs
+Verbs in UNDEFINED language are actions.
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/lexicon.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/lexicon.lexc)</small>Prefixes
+Prefixes in the Hungarian language are bound to beginning of other words.
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/prefixes.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/prefixes.lexc)</small>Nouns
+Nouns in HUNGARIAN language are things.
+
+
+new code
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/nouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/nouns.lexc)</small>Adjectives
+Adjectives in the Hungarian language describe things.
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/adjectives.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/adjectives.lexc)</small>Pronouns
+Pronouns in the Hungarian language are references to things.
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/pronouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/pronouns.lexc)</small>Verbs
+Verbs in the Hungarian language are actions.
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/verbs.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/verbs.lexc)</small>Numerals
+Numerals in the Hungarian language are numbers.
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/numerals.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/numerals.lexc)</small>Proper nouns
+Proper nouns in the HUNGARIAN language are references to things.
+
+
+
+* * *
+<small>This (part of) documentation was generated from [../src/fst/stems/propernouns.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/stems/propernouns.lexc)</small>
 
 
 We describe here how abbreviations are in Hungarian are read out, e.g.
