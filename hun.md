@@ -611,7 +611,7 @@ These were the set types.
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
 
-# Definitions for Multichar_Symbols@CODE@
+# Definitions for Multichar_Symbols
 
 ## Analysis symbols
 The morphological analyses of wordforms for the Hungarian
@@ -625,23 +625,23 @@ The Usage extents are marked using following tags:
 
 The nominals are inflected in the following Case and Number
 
- *  +Abl	  Ablative
- *  +Acc	  Accusative
- *  +Ade	  Adessive
- *  +All	  Allative
- *  +Cau	  Causative
- *  +Del	  Delative
- *  +Ela	  Elative
- *  +Ess/F	  Formal-Essive
- *  +Ess/M	  Modal-Essive
- *  +Ill 	  Illative
- *  +Ine	  Inessive
- *  +Ins	  Instrumental
- *  +Nom	  Nominative
- *  +Ses	  Superessive
- *  +Sla	  Sublative
- *  +Ter	  Terminative
- *  +Tra	  Translative
+*  +Abl	  Ablative
+*  +Acc	  Accusative
+*  +Ade	  Adessive
+*  +All	  Allative
+*  +Cau	  Causative
+*  +Del	  Delative
+*  +Ela	  Elative
+*  +Ess/F	  Formal-Essive
+*  +Ess/M	  Modal-Essive
+*  +Ill 	  Illative
+*  +Ine	  Inessive
+*  +Ins	  Instrumental
+*  +Nom	  Nominative
+*  +Ses	  Superessive
+*  +Sla	  Sublative
+*  +Ter	  Terminative
+*  +Tra	  Translative
 
 
 
@@ -652,7 +652,7 @@ Verb moods are:
 Verb personal forms are:
 Other verb forms are
 
-* +Symbol© = independent symbols in the text stream, like £, €, ©
+* +Symbol = independent symbols in the text stream, like £, €, ©
 Special symbols are classified with:
 The verbs are syntactically split according to transitivity:
 Special multiword units are analysed with:
@@ -670,55 +670,55 @@ source and target part-of-speech.
 Morphophonology
 To represent phonologic variations in word forms we use the following
 symbols in the lexicon files:
- *  %^Ö2		 h%^Ö2z
- *  %^V2          ház%>%^V2al : házzal
+*  %^Ö2		 h%^Ö2z
+*  %^V2          ház%>%^V2al : házzal
 And following triggers to control variation
- *  %^Hist          historic documents
- *  %^Pen          penultimate position
- *  %^RmVow        remove vowel
- *  %^V2VV         lengthen vowel
- *  %^VV2V         shorten vowel
+*  %^Hist          historic documents
+*  %^Pen          penultimate position
+*  %^RmVow        remove vowel
+*  %^V2VV         lengthen vowel
+*  %^VV2V         shorten vowel
 
 Vowel variants
- *  %{ae%}       low vowel variants
- *  %{aeáé%}       low vowel variants
- *  %{áé%}	        long low vowel variants
- *  %{eoö%}       mid vowel variants
- *  %{óő%}	       long mid vowel variants
- *  %{uü%}       high labial variants
+*  %{ae%}       low vowel variants
+*  %{aeáé%}       low vowel variants
+*  %{áé%}	        long low vowel variants
+*  %{eoö%}       mid vowel variants
+*  %{óő%}	       long mid vowel variants
+*  %{uü%}       high labial variants
 
 
 ## Flag diacritics
 POSSESSOR INDICES or POSSESSIVE SUFFIXES
 FRONT/BACK VOWEL HARMONY
-|  @C.VOWEL-HARMONY@boundary | used at word boundary
+|  @C.VOWEL-HARMONY@ | used at word boundary
 
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics - only allow compounds
 with verbs if the verb is further derived into a noun again:
-|  @P.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
-|  @D.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
-|  @C.NeedNoun@nominalised | (Dis)allow compounds with verbs unless nominalised
+|  @P.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
+|  @D.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
+|  @C.NeedNoun@ | (Dis)allow compounds with verbs unless nominalised
 
 For languages that allow compounding, the following flag diacritics are needed
 to control position-based compounding restrictions for nominals. Their use is
 handled automatically if combined with +CmpN/xxx tags. If not used, they will
 do no harm.
-|  @P.CmpFrst.FALSE@first | Require that words tagged as such only appear first
-|  @D.CmpPref.TRUE@ENDLEX | Block such words from entering ENDLEX
-|  @P.CmpPref.FALSE@compounds | Block these words from making further compounds
-|  @D.CmpLast.TRUE@R | Block such words from entering R
-|  @D.CmpNone.TRUE@compounding | Combines with the next tag to prohibit compounding
-|  @U.CmpNone.FALSE@compounding | Combines with the prev tag to prohibit compounding
-|  @P.CmpOnly.TRUE@R | Sets a flag to indicate that the word has passed R
-|  @D.CmpOnly.FALSE@root. | Disallow words coming directly from root.
+|  @P.CmpFrst.FALSE@ | Require that words tagged as such only appear first
+|  @D.CmpPref.TRUE@ | Block such words from entering ENDLEX
+|  @P.CmpPref.FALSE@ | Block these words from making further compounds
+|  @D.CmpLast.TRUE@ | Block such words from entering R
+|  @D.CmpNone.TRUE@ | Combines with the next tag to prohibit compounding
+|  @U.CmpNone.FALSE@ | Combines with the prev tag to prohibit compounding
+|  @P.CmpOnly.TRUE@ | Sets a flag to indicate that the word has passed R
+|  @D.CmpOnly.FALSE@ | Disallow words coming directly from root.
 
 Use the following flag diacritics to control downcasing of derived proper
 nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
 these flags. There exists a ready-made regex that will do the actual down-casing
 given the proper use of these flags.
-|  @U.Cap.Obl@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
-|  @U.Cap.Opt@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Opt@ | Allowing downcasing of derived names: deatnulasj.
 
 The word forms in Hungarian language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
@@ -766,7 +766,7 @@ The HUNGARIAN language nouns inflect in cases.
 
 
 
- * LEXICON N_TETŐ__n  tetején
+* LEXICON N_TETŐ__n  tetején
 
 
 
@@ -842,43 +842,43 @@ This file documents the [phonology.twolc file](http://github.com/giellalt/lang-h
 
 ## Alphabets and sets
 
- *  a b c d e f g h i j k l m n o p q r s t u v w x y z  
-    á é ó ú í ö ü ő ű  
-    æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç  
+*  a b c d e f g h i j k l m n o p q r s t u v w x y z  
+   á é ó ú í ö ü ő ű  
+   æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç  
 
- *  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
-   Á É Ó Ú Í Ö Ü Ő Ű  
- *  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç  
+*  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
+  Á É Ó Ú Í Ö Ü Ő Ű  
+*  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç  
 
 TRIGGERS
- * %{back%}:0  
- * %{front%}:0  
- * %^Ö2:0		 h%^Ö2z
- * %^V2:0		 %^V2al 
- * %^Hist:0          historic documents
- * %^Pen:0		 penultimate position
- * %^RmVow:0	 remove vowel
- * %^V2VV:0	 lengthen vowel
- * %^VV2V:0	 shorten vowel
+* %{back%}:0  
+* %{front%}:0  
+* %^Ö2:0		 h%^Ö2z
+* %^V2:0		 %^V2al 
+* %^Hist:0          historic documents
+* %^Pen:0		 penultimate position
+* %^RmVow:0	 remove vowel
+* %^V2VV:0	 lengthen vowel
+* %^VV2V:0	 shorten vowel
 
 Archiphones
- * %{ae%}:a %{ae%}:e  
- * %{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é  
- * %{áé%}:á %{áé%}:é  
- * %{eoö%}:e %{eoö%}:o %{eoö%}:ö  
- * %{óő%}:ó %{óő%}:ő  
- * %{uü%}:u %{uü%}:ü  
- *  %>  
+* %{ae%}:a %{ae%}:e  
+* %{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é  
+* %{áé%}:á %{áé%}:é  
+* %{eoö%}:e %{eoö%}:o %{eoö%}:ö  
+* %{óő%}:ó %{óő%}:ő  
+* %{uü%}:u %{uü%}:ü  
+*  %>  
 
 Sets
 
- *  Vow = a e i o u á é ó ú í ő ű ö ü  
-         A E I O U Á É Ó Ú Í Ő Ű Ö Ü  
-         æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;  
- *  VowAndY = Vow y Y ;  
+*  Vow = a e i o u á é ó ú í ő ű ö ü  
+        A E I O U Á É Ó Ú Í Ő Ű Ö Ü  
+        æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;  
+*  VowAndY = Vow y Y ;  
 
- *  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
-         B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
+*  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
+        B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
 
 ## Rules 
 
@@ -952,7 +952,7 @@ Rule: **long high vowel variation u ü front **
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
 
-# Definitions for Multichar_Symbols@CODE@
+# Definitions for Multichar_Symbols
 
 ## Analysis symbols
 The morphological analyses of wordforms for the Hungarian
@@ -967,23 +967,23 @@ The Usage extents are marked using following tags:
 
 The nominals are inflected in the following Case and Number
 
- *  +Abl	  Ablative
- *  +Acc	  Accusative
- *  +Ade	  Adessive
- *  +All	  Allative
- *  +Cau	  Causative
- *  +Del	  Delative
- *  +Ela	  Elative
- *  +Ess/F	  Formal-Essive
- *  +Ess/M	  Modal-Essive
- *  +Ill 	  Illative
- *  +Ine	  Inessive
- *  +Ins	  Instrumental
- *  +Nom	  Nominative
- *  +Ses	  Superessive
- *  +Sla	  Sublative
- *  +Ter	  Terminative
- *  +Tra	  Translative
+*  +Abl	  Ablative
+*  +Acc	  Accusative
+*  +Ade	  Adessive
+*  +All	  Allative
+*  +Cau	  Causative
+*  +Del	  Delative
+*  +Ela	  Elative
+*  +Ess/F	  Formal-Essive
+*  +Ess/M	  Modal-Essive
+*  +Ill 	  Illative
+*  +Ine	  Inessive
+*  +Ins	  Instrumental
+*  +Nom	  Nominative
+*  +Ses	  Superessive
+*  +Sla	  Sublative
+*  +Ter	  Terminative
+*  +Tra	  Translative
 
 
 
@@ -1011,47 +1011,47 @@ source and target part-of-speech.
 Morphophonology
 To represent phonologic variations in word forms we use the following
 symbols in the lexicon files:
- *  %^Ö2		 h%^Ö2z
- *  %^V2          ház%>%^V2al : házzal
+*  %^Ö2		 h%^Ö2z
+*  %^V2          ház%>%^V2al : házzal
 And following triggers to control variation
- *  %^Hist          historic documents
- *  %^Pen          penultimate position
- *  %^RmVow        remove vowel
- *  %^V2VV         lengthen vowel
- *  %^VV2V         shorten vowel
+*  %^Hist          historic documents
+*  %^Pen          penultimate position
+*  %^RmVow        remove vowel
+*  %^V2VV         lengthen vowel
+*  %^VV2V         shorten vowel
 
 
 ## Flag diacritics
 POSSESSOR INDICES or POSSESSIVE SUFFIXES
 FRONT/BACK VOWEL HARMONY
-|  @C.VOWEL-HARMONY@boundary | used at word boundary
+|  @C.VOWEL-HARMONY@ | used at word boundary
 
 We have manually optimised the structure of our lexicon using following
 flag diacritics to restrict morhpological combinatorics - only allow compounds
 with verbs if the verb is further derived into a noun again:
-|  @P.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
-|  @D.NeedNoun.ON@nominalised | (Dis)allow compounds with verbs unless nominalised
-|  @C.NeedNoun@nominalised | (Dis)allow compounds with verbs unless nominalised
+|  @P.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
+|  @D.NeedNoun.ON@ | (Dis)allow compounds with verbs unless nominalised
+|  @C.NeedNoun@ | (Dis)allow compounds with verbs unless nominalised
 
 For languages that allow compounding, the following flag diacritics are needed
 to control position-based compounding restrictions for nominals. Their use is
 handled automatically if combined with +CmpN/xxx tags. If not used, they will
 do no harm.
-|  @P.CmpFrst.FALSE@first | Require that words tagged as such only appear first
-|  @D.CmpPref.TRUE@ENDLEX | Block such words from entering ENDLEX
-|  @P.CmpPref.FALSE@compounds | Block these words from making further compounds
-|  @D.CmpLast.TRUE@R | Block such words from entering R
-|  @D.CmpNone.TRUE@compounding | Combines with the next tag to prohibit compounding
-|  @U.CmpNone.FALSE@compounding | Combines with the prev tag to prohibit compounding
-|  @P.CmpOnly.TRUE@R | Sets a flag to indicate that the word has passed R
-|  @D.CmpOnly.FALSE@root. | Disallow words coming directly from root.
+|  @P.CmpFrst.FALSE@ | Require that words tagged as such only appear first
+|  @D.CmpPref.TRUE@ | Block such words from entering ENDLEX
+|  @P.CmpPref.FALSE@ | Block these words from making further compounds
+|  @D.CmpLast.TRUE@ | Block such words from entering R
+|  @D.CmpNone.TRUE@ | Combines with the next tag to prohibit compounding
+|  @U.CmpNone.FALSE@ | Combines with the prev tag to prohibit compounding
+|  @P.CmpOnly.TRUE@ | Sets a flag to indicate that the word has passed R
+|  @D.CmpOnly.FALSE@ | Disallow words coming directly from root.
 
 Use the following flag diacritics to control downcasing of derived proper
 nouns (e.g. Finnish Pariisi -> pariisilainen). See e.g. North Sámi for how to use
 these flags. There exists a ready-made regex that will do the actual down-casing
 given the proper use of these flags.
-|  @U.Cap.Obl@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
-|  @U.Cap.Opt@deatnulasj. | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Obl@ | Allowing downcasing of derived names: deatnulasj.
+|  @U.Cap.Opt@ | Allowing downcasing of derived names: deatnulasj.
 
 The word forms in UNDEFINED language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
@@ -1214,12 +1214,12 @@ for text-to-speech systems.
 
 For example:
 
- * s.:syntynyt # ;  
- * os.:omaa% sukua # ;  
- * v.:vuosi # ;  
- * v.:vuonna # ;  
- * esim.:esimerkki # ; 
- * esim.:esimerkiksi # ; 
+* s.:syntynyt # ;  
+* os.:omaa% sukua # ;  
+* v.:vuosi # ;  
+* v.:vuonna # ;  
+* esim.:esimerkki # ; 
+* esim.:esimerkiksi # ; 
 
 
 * * *

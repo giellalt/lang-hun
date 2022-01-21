@@ -6,43 +6,43 @@ This file documents the [phonology.twolc file](http://github.com/giellalt/lang-h
 
 ## Alphabets and sets
 
- *  a b c d e f g h i j k l m n o p q r s t u v w x y z  
-    á é ó ú í ö ü ő ű  
-    æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç  
+*  a b c d e f g h i j k l m n o p q r s t u v w x y z  
+   á é ó ú í ö ü ő ű  
+   æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç  
 
- *  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
-   Á É Ó Ú Í Ö Ü Ő Ű  
- *  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç  
+*  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
+  Á É Ó Ú Í Ö Ü Ő Ű  
+*  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç  
 
 TRIGGERS
- * %{back%}:0  
- * %{front%}:0  
- * %^Ö2:0		 h%^Ö2z
- * %^V2:0		 %^V2al 
- * %^Hist:0          historic documents
- * %^Pen:0		 penultimate position
- * %^RmVow:0	 remove vowel
- * %^V2VV:0	 lengthen vowel
- * %^VV2V:0	 shorten vowel
+* %{back%}:0  
+* %{front%}:0  
+* %^Ö2:0		 h%^Ö2z
+* %^V2:0		 %^V2al 
+* %^Hist:0          historic documents
+* %^Pen:0		 penultimate position
+* %^RmVow:0	 remove vowel
+* %^V2VV:0	 lengthen vowel
+* %^VV2V:0	 shorten vowel
 
 Archiphones
- * %{ae%}:a %{ae%}:e  
- * %{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é  
- * %{áé%}:á %{áé%}:é  
- * %{eoö%}:e %{eoö%}:o %{eoö%}:ö  
- * %{óő%}:ó %{óő%}:ő  
- * %{uü%}:u %{uü%}:ü  
- *  %>  
+* %{ae%}:a %{ae%}:e  
+* %{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é  
+* %{áé%}:á %{áé%}:é  
+* %{eoö%}:e %{eoö%}:o %{eoö%}:ö  
+* %{óő%}:ó %{óő%}:ő  
+* %{uü%}:u %{uü%}:ü  
+*  %>  
 
 Sets
 
- *  Vow = a e i o u á é ó ú í ő ű ö ü  
-         A E I O U Á É Ó Ú Í Ő Ű Ö Ü  
-         æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;  
- *  VowAndY = Vow y Y ;  
+*  Vow = a e i o u á é ó ú í ő ű ö ü  
+        A E I O U Á É Ó Ú Í Ő Ű Ö Ü  
+        æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;  
+*  VowAndY = Vow y Y ;  
 
- *  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
-         B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
+*  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
+        B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
 
 ## Rules 
 

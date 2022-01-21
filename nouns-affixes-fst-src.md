@@ -31,7 +31,7 @@ The HUNGARIAN language nouns inflect in cases.
 
 
 
- * LEXICON N_TETŐ__n  tetején
+* LEXICON N_TETŐ__n  tetején
 
 
 
