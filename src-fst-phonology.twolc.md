@@ -75,13 +75,11 @@ Rule: **Assimilation to stem-final sz**
 
 Rule: **v from V2** 
 
-
 fül+N+Sg+Nom+PxPl2
 * *fül%{front%}%>%{ae%}t%{eoö%}k*
 * *fül0%>etek*
 
 Rule: **%{eoö%} to o** 
-
 
 Rule: **low vowel variation a e back** 
 * *ház%{back%}%>b%{ae%}n*
@@ -92,8 +90,6 @@ Rule: **low vowel variation a e back**
 
 Rule: **low vowel variation a e front short** 
 
-
-
 Rule: **low vowel variation a e á é back short** 
 
 Rule: **low vowel variation a e á é back long** 
@@ -101,7 +97,6 @@ Rule: **low vowel variation a e á é back long**
 Rule: **low vowel variation a e á é front short** 
 
 Rule: **low vowel variation a e á é front long** 
-
 
 Rule: **long mid vowel variation ó ő back ** 
 
@@ -112,4 +107,8 @@ Rule: **long high vowel variation u ü back **
 Rule: **long high vowel variation u ü front ** 
 
 * * *
-<small>This (part of) documentation was generated from [../src/fst/phonology.twolc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/phonology.twolc)</small>
+
+<small>This (part of) documentation was generated from [src/fst/phonology.twolc](https://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc)</small>
+
+---
+

@@ -2,7 +2,6 @@
 # Hungarian morphological analyser                      !
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
-
 # Definitions for Multichar_Symbols
 
 ## Analysis symbols
@@ -35,8 +34,6 @@ The nominals are inflected in the following Case and Number
 *  +Ter	  Terminative
 *  +Tra	  Translative
 
-
-
 The possession is marked as such:
 The comparative forms are:
 Numerals are classified under:
@@ -52,9 +49,7 @@ Non-dictionary words can be recognised with:
 
 Question and Focus particles:
 
-
 Semantics are classified with
-
 
 Derivations are classified under the morphophonetic form of the suffix, the
 source and target part-of-speech.
@@ -78,7 +73,6 @@ Vowel variants
 *  %{eoö%}       mid vowel variants
 *  %{óő%}	       long mid vowel variants
 *  %{uü%}       high labial variants
-
 
 ## Flag diacritics
 POSSESSOR INDICES or POSSESSIVE SUFFIXES
@@ -115,6 +109,9 @@ given the proper use of these flags.
 The word forms in Hungarian language start from the lexeme roots of basic
 word classes, or optionally from prefixes:
 
-
 * * *
-<small>This (part of) documentation was generated from [../src/fst/root.lexc](http://github.com/giellalt/lang-hun/blob/main/../src/fst/root.lexc)</small>
+
+<small>This (part of) documentation was generated from [src/fst/root.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/root.lexc)</small>
+
+---
+
