@@ -170,187 +170,51 @@ These were the set types.
 ## HNOUN MAPPING
 
 * * *
-
-<small>This (part of) documentation was generated from [src/cg3/functions.cg3](https://github.com/giellalt/lang-hun/blob/main/src/cg3/functions.cg3)</small>
-
----
-
-=================================== !
-# The Hungarian morphophonological/twolc rules file 
-=================================== !
-
-This file documents the [phonology.twolc file](http://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc) 
-
-## Alphabets and sets
-
-*  a b c d e f g h i j k l m n o p q r s t u v w x y z  
-   á é ó ú í ö ü ő ű  
-   æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç  
-
-*  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
-  Á É Ó Ú Í Ö Ü Ő Ű  
-*  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç  
-
-TRIGGERS
-* %{back%}:0  
-* %{front%}:0  
-* %^Ö2:0		 h%^Ö2z
-* %^V2:0		 %^V2al 
-* %^Hist:0          historic documents
-* %^Pen:0		 penultimate position
-* %^RmVow:0	 remove vowel
-* %^V2VV:0	 lengthen vowel
-* %^VV2V:0	 shorten vowel
-
-Archiphones
-* %{ae%}:a %{ae%}:e  
-* %{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é  
-* %{áé%}:á %{áé%}:é  
-* %{eoö%}:e %{eoö%}:o %{eoö%}:ö  
-* %{óő%}:ó %{óő%}:ő  
-* %{uü%}:u %{uü%}:ü  
-*  %>  
-
-Sets
-
-*  Vow = a e i o u á é ó ú í ő ű ö ü  
-        A E I O U Á É Ó Ú Í Ő Ű Ö Ü  
-        æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;  
-*  VowAndY = Vow y Y ;  
-
-*  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
-        B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
-
-## Rules 
-
-Rule: **Stem-final vowel lengthening** 
-béke+N+Sg+PxSg3
-* *béke%^V2VV%>je*
-* *béké0%>je*
-
-Rule: **Penultimate Stem vowel shortening** 
-madár+N+Pl+Nom
-* *madár%^Pen%^VV2V%>ak*
-* *madar00%>ak*
-
-Rule: **Penultimate and stem-final vowel removal** 
-forradalom+N+Pl+Nom
-* *forradalom%{back%}%^Pen%^RmVow%>%{ae%}k*
-* *forradal0m000%>ak*
-
-falu+N+Pl+Nom
-* *falu%^RmVow%>vak*
-* *fal00%>vak*
-
-Rule: **Assimilation to stem-final consonant** 
-
-Rule: **Assimilation to stem-final consonant followed by y** 
-
-Rule: **Assimilation to stem-final zs cs ** 
-
-Rule: **Assimilation to stem-final sz** 
-
-Rule: **v from V2** 
-
-fül+N+Sg+Nom+PxPl2
-* *fül%{front%}%>%{ae%}t%{eoö%}k*
-* *fül0%>etek*
-
-Rule: **%{eoö%} to o** 
-
-Rule: **low vowel variation a e back** 
-* *ház%{back%}%>b%{ae%}n*
-* *ház0%>ban*
-
-* ★*ház%{back%}%>b%{ae%}n* (is not standard language)
-* ★*ház0%>ben* (is not standard language)
-
-Rule: **low vowel variation a e front short** 
-
-Rule: **low vowel variation a e á é back short** 
-
-Rule: **low vowel variation a e á é back long** 
-
-Rule: **low vowel variation a e á é front short** 
-
-Rule: **low vowel variation a e á é front long** 
-
-Rule: **long mid vowel variation ó ő back ** 
-
-Rule: **long mid vowel variation ó ő front ** 
-
-Rule: **long high vowel variation u ü back ** 
-
-Rule: **long high vowel variation u ü front ** 
+<small>This (part of) documentation was generated from [src/cg3/functions.cg3](https://github.com/giellalt/lang-hun/blob/main/src/cg3/functions.cg3)</small>Adjective inflection
+The Hungarian language adjectives compare.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/phonology.twolc](https://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc)</small>
+<small>This (part of) documentation was generated from [src/fst/affixes/adjectives.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/adjectives.lexc)</small>
 
 ---
 
-Nouns
-Nouns in HUNGARIAN language are things.
+Noun inflection
+The HUNGARIAN language nouns inflect in cases.
 
-new code
+* LEXICON N_TETŐ__n  tetején
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/nouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/nouns.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/affixes/nouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/nouns.lexc)</small>
 
 ---
 
-Pronouns
-Pronouns in the Hungarian language are references to things.
+Proper noun inflection
+The HUNGARIAN language proper nouns inflect in the same cases as regular
+nouns, but with a colon (':') as separator.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/pronouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/pronouns.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/affixes/propernouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/propernouns.lexc)</small>
 
 ---
 
-Numerals
-Numerals in the Hungarian language are numbers.
+
+# Symbol affixes
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/numerals.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/numerals.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/affixes/symbols.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/symbols.lexc)</small>
 
 ---
 
-Proper nouns
-Proper nouns in the HUNGARIAN language are references to things.
+Verb inflection
+The Hungarian language verbs inflect in persons.
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/stems/propernouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/propernouns.lexc)</small>
-
----
-
-Adjectives
-Adjectives in the Hungarian language describe things.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/adjectives.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/adjectives.lexc)</small>
-
----
-
-Prefixes
-Prefixes in the Hungarian language are bound to beginning of other words.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/prefixes.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/prefixes.lexc)</small>
-
----
-
-Verbs
-Verbs in the Hungarian language are actions.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/stems/verbs.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/verbs.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/affixes/verbs.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/verbs.lexc)</small>
 
 ---
 
@@ -498,51 +362,117 @@ Verbs in UNDEFINED language are actions.
 
 ---
 
-Noun inflection
-The HUNGARIAN language nouns inflect in cases.
+=================================== !
+# The Hungarian morphophonological/twolc rules file 
+=================================== !
 
-* LEXICON N_TETŐ__n  tetején
+This file documents the [phonology.twolc file](http://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc) 
+
+## Alphabets and sets
+
+*  a b c d e f g h i j k l m n o p q r s t u v w x y z  
+   á é ó ú í ö ü ő ű  
+   æ ø å à è ò ù ì ä ë ï â ê ô û î ã ý þ ñ ð ß ç  
+
+*  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z  
+  Á É Ó Ú Í Ö Ü Ő Ű  
+*  Æ Ø Å À È Ò Ù Ì Ä Ë Ï Â Ê Ô Û Î Ã Ý Þ Ñ Ð ß Ç  
+
+TRIGGERS
+* %{back%}:0  
+* %{front%}:0  
+* %^Ö2:0		 h%^Ö2z
+* %^V2:0		 %^V2al 
+* %^Hist:0          historic documents
+* %^Pen:0		 penultimate position
+* %^RmVow:0	 remove vowel
+* %^V2VV:0	 lengthen vowel
+* %^VV2V:0	 shorten vowel
+
+Archiphones
+* %{ae%}:a %{ae%}:e  
+* %{aeáé%}:a %{aeáé%}:e %{aeáé%}:á %{aeáé%}:é  
+* %{áé%}:á %{áé%}:é  
+* %{eoö%}:e %{eoö%}:o %{eoö%}:ö  
+* %{óő%}:ó %{óő%}:ő  
+* %{uü%}:u %{uü%}:ü  
+*  %>  
+
+Sets
+
+*  Vow = a e i o u á é ó ú í ő ű ö ü  
+        A E I O U Á É Ó Ú Í Ő Ű Ö Ü  
+        æ ø å à è ò ù ì ä ë ö ü ï â ê ô û î ã ý ;  
+*  VowAndY = Vow y Y ;  
+
+*  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
+        B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
+
+## Rules 
+
+Rule: **Stem-final vowel lengthening** 
+béke+N+Sg+PxSg3
+* *béke%^V2VV%>je*
+* *béké0%>je*
+
+Rule: **Penultimate Stem vowel shortening** 
+madár+N+Pl+Nom
+* *madár%^Pen%^VV2V%>ak*
+* *madar00%>ak*
+
+Rule: **Penultimate and stem-final vowel removal** 
+forradalom+N+Pl+Nom
+* *forradalom%{back%}%^Pen%^RmVow%>%{ae%}k*
+* *forradal0m000%>ak*
+
+falu+N+Pl+Nom
+* *falu%^RmVow%>vak*
+* *fal00%>vak*
+
+Rule: **Assimilation to stem-final consonant** 
+
+Rule: **Assimilation to stem-final consonant followed by y** 
+
+Rule: **Assimilation to stem-final zs cs ** 
+
+Rule: **Assimilation to stem-final sz** 
+
+Rule: **v from V2** 
+
+fül+N+Sg+Nom+PxPl2
+* *fül%{front%}%>%{ae%}t%{eoö%}k*
+* *fül0%>etek*
+
+Rule: **%{eoö%} to o** 
+
+Rule: **low vowel variation a e back** 
+* *ház%{back%}%>b%{ae%}n*
+* *ház0%>ban*
+
+* ★*ház%{back%}%>b%{ae%}n* (is not standard language)
+* ★*ház0%>ben* (is not standard language)
+
+Rule: **low vowel variation a e front short** 
+
+Rule: **low vowel variation a e á é back short** 
+
+Rule: **low vowel variation a e á é back long** 
+
+Rule: **low vowel variation a e á é front short** 
+
+Rule: **low vowel variation a e á é front long** 
+
+Rule: **long mid vowel variation ó ő back ** 
+
+Rule: **long mid vowel variation ó ő front ** 
+
+Rule: **long high vowel variation u ü back ** 
+
+Rule: **long high vowel variation u ü front ** 
 
 * * *
 
-<small>This (part of) documentation was generated from [src/fst/affixes/nouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/nouns.lexc)</small>
-
----
-
-Proper noun inflection
-The HUNGARIAN language proper nouns inflect in the same cases as regular
-nouns, but with a colon (':') as separator.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/propernouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/propernouns.lexc)</small>
-
----
-
-Adjective inflection
-The Hungarian language adjectives compare.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/adjectives.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/adjectives.lexc)</small>
-
----
-
-Verb inflection
-The Hungarian language verbs inflect in persons.
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/verbs.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/verbs.lexc)</small>
-
----
-
-
-# Symbol affixes
-
-* * *
-
-<small>This (part of) documentation was generated from [src/fst/affixes/symbols.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/affixes/symbols.lexc)</small>
+<small>This (part of) documentation was generated from [src/fst/phonology.twolc](https://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc)</small>
 
 ---
 
@@ -660,6 +590,71 @@ word classes, or optionally from prefixes:
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/root.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/root.lexc)</small>
+
+---
+
+Adjectives
+Adjectives in the Hungarian language describe things.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/adjectives.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/adjectives.lexc)</small>
+
+---
+
+Nouns
+Nouns in HUNGARIAN language are things.
+
+new code
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/nouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/nouns.lexc)</small>
+
+---
+
+Numerals
+Numerals in the Hungarian language are numbers.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/numerals.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/numerals.lexc)</small>
+
+---
+
+Prefixes
+Prefixes in the Hungarian language are bound to beginning of other words.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/prefixes.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/prefixes.lexc)</small>
+
+---
+
+Pronouns
+Pronouns in the Hungarian language are references to things.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/pronouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/pronouns.lexc)</small>
+
+---
+
+Proper nouns
+Proper nouns in the HUNGARIAN language are references to things.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/propernouns.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/propernouns.lexc)</small>
+
+---
+
+Verbs
+Verbs in the Hungarian language are actions.
+
+* * *
+
+<small>This (part of) documentation was generated from [src/fst/stems/verbs.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/stems/verbs.lexc)</small>
 
 ---
 
@@ -832,20 +827,6 @@ retracted tongue root			_q
 
 
 
-% komma% :,      Root ;
-% tjuohkkis% :%. Root ;
-% kolon% :%:     Root ;
-% sárggis% :%-   Root ; 
-% násti% :%*     Root ; 
-
-* * *
-
-<small>This (part of) documentation was generated from [src/transcriptions/transcriptor-numbers-digit2text.lexc](https://github.com/giellalt/lang-hun/blob/main/src/transcriptions/transcriptor-numbers-digit2text.lexc)</small>
-
----
-
-
-
 We describe here how abbreviations are in Hungarian are read out, e.g.
 for text-to-speech systems.
 
@@ -861,6 +842,20 @@ For example:
 * * *
 
 <small>This (part of) documentation was generated from [src/transcriptions/transcriptor-abbrevs2text.lexc](https://github.com/giellalt/lang-hun/blob/main/src/transcriptions/transcriptor-abbrevs2text.lexc)</small>
+
+---
+
+
+
+% komma% :,      Root ;
+% tjuohkkis% :%. Root ;
+% kolon% :%:     Root ;
+% sárggis% :%-   Root ; 
+% násti% :%*     Root ; 
+
+* * *
+
+<small>This (part of) documentation was generated from [src/transcriptions/transcriptor-numbers-digit2text.lexc](https://github.com/giellalt/lang-hun/blob/main/src/transcriptions/transcriptor-numbers-digit2text.lexc)</small>
 
 ---
 
@@ -902,7 +897,6 @@ CLB
 LEFT
 RIGHT
 WEB
-QMARK
 PPUNCT
 PUNCT
 
@@ -1016,9 +1010,6 @@ Sem/Txt
 
 HUMAN
 
-HAB-ACTOR
-HAB-ACTOR-NOT-HUMAN
-
 PROP-ATTR
 PROP-SUR
 
@@ -1107,8 +1098,6 @@ INITIAL
 ### Sets for word or not
 
 WORD
-REAL-WORD
-REAL-WORD-NOT-ABBR
 NOT-COMMA
 
 ### Case sets
@@ -1167,75 +1156,7 @@ expression **WORD - premodifiers**.
 ### Grammarchecker sets
 
 * * *
-
-<small>This (part of) documentation was generated from [tools/grammarcheckers/grammarchecker.cg3](https://github.com/giellalt/lang-hun/blob/main/tools/grammarcheckers/grammarchecker.cg3)</small>
-
----
-
-# Grammar checker tokenisation for hun
-
-Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
-Then just:
-```
-$ make
-$ echo "ja, ja" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
-```
-
-More usage examples:
-```
-$ echo "Juos gorreválggain lea (dárbbašlaš) deavdit gáibádusa boasttu olmmoš, man mielde lahtuid." | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
-$ echo "(gáfe) 'ja' ja 3. ja? ц jaja ukjend \"ukjend\"" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
-$ echo "márffibiillagáffe" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
-```
-
-Pmatch documentation:
-<https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstPmatch>
-
-Characters which have analyses in the lexicon, but can appear without spaces
-before/after, that is, with no context conditions, and adjacent to words:
-* Punct contains ASCII punctuation marks
-* The symbol after m-dash is soft-hyphen `U+00AD`
-* The symbol following {•} is byte-order-mark / zero-width no-break space
-`U+FEFF`.
-
-Whitespace contains ASCII white space and
-the List contains some unicode white space characters
-* En Quad U+2000 to Zero-Width Joiner U+200d'
-* Narrow No-Break Space U+202F
-* Medium Mathematical Space U+205F
-* Word joiner U+2060
-
-Apart from what's in our morphology, there are
-1) unknown word-like forms, and
-2) unmatched strings
-We want to give 1) a match, but let 2) be treated specially by hfst-tokenise -a
-* select extended latin symbols
-* select symbols
-* various symbols from Private area (probably Microsoft),
-so far:
-* U+F0B7 for "x in box"
-
-TODO: Could use something like this, but built-in's don't include šžđčŋ:
-
-Simply give an empty reading when something is unknown:
-hfst-tokenise --giella-cg will treat such empty analyses as unknowns, and
-remove empty analyses from other readings. Empty readings are also
-legal in CG, they get a default baseform equal to the wordform, but
-no tag to check, so it's safer to let hfst-tokenise handle them.
-
-Finally we mark as a token any sequence making up a:
-* known word in context
-* unknown (OOV) token in context
-* sequence of word and punctuation
-* URL in context
-
-* * *
-
-<small>This (part of) documentation was generated from [tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript](https://github.com/giellalt/lang-hun/blob/main/tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript)</small>
-
----
-
-# Tokeniser for hun
+<small>This (part of) documentation was generated from [tools/grammarcheckers/grammarchecker.cg3](https://github.com/giellalt/lang-hun/blob/main/tools/grammarcheckers/grammarchecker.cg3)</small># Tokeniser for hun
 
 Usage:
 ```
@@ -1247,7 +1168,7 @@ $ echo "márffibiillagáffe" | hfst-tokenise --giella-cg tokeniser-disamb-gt-des
 ```
 
 Pmatch documentation:
-<https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstPmatch>
+<https://github.com/hfst/hfst/wiki/HfstPmatch>
 
 Characters which have analyses in the lexicon, but can appear without spaces
 before/after, that is, with no context conditions, and adjacent to words:
@@ -1295,6 +1216,69 @@ Finally we mark as a token any sequence making up a:
 * * *
 
 <small>This (part of) documentation was generated from [tools/tokenisers/tokeniser-disamb-gt-desc.pmscript](https://github.com/giellalt/lang-hun/blob/main/tools/tokenisers/tokeniser-disamb-gt-desc.pmscript)</small>
+
+---
+
+# Grammar checker tokenisation for hun
+
+Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
+Then just:
+```
+$ make
+$ echo "ja, ja" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
+```
+
+More usage examples:
+```
+$ echo "Juos gorreválggain lea (dárbbašlaš) deavdit gáibádusa boasttu olmmoš, man mielde lahtuid." | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
+$ echo "(gáfe) 'ja' ja 3. ja? ц jaja ukjend \"ukjend\"" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
+$ echo "márffibiillagáffe" | hfst-tokenise --giella-cg tokeniser-disamb-gt-desc.pmhfst
+```
+
+Pmatch documentation:
+<https://github.com/hfst/hfst/wiki/HfstPmatch>
+
+Characters which have analyses in the lexicon, but can appear without spaces
+before/after, that is, with no context conditions, and adjacent to words:
+* Punct contains ASCII punctuation marks
+* The symbol after m-dash is soft-hyphen `U+00AD`
+* The symbol following {•} is byte-order-mark / zero-width no-break space
+`U+FEFF`.
+
+Whitespace contains ASCII white space and
+the List contains some unicode white space characters
+* En Quad U+2000 to Zero-Width Joiner U+200d'
+* Narrow No-Break Space U+202F
+* Medium Mathematical Space U+205F
+* Word joiner U+2060
+
+Apart from what's in our morphology, there are
+1) unknown word-like forms, and
+2) unmatched strings
+We want to give 1) a match, but let 2) be treated specially by hfst-tokenise -a
+* select extended latin symbols
+* select symbols
+* various symbols from Private area (probably Microsoft),
+so far:
+* U+F0B7 for "x in box"
+
+TODO: Could use something like this, but built-in's don't include šžđčŋ:
+
+Simply give an empty reading when something is unknown:
+hfst-tokenise --giella-cg will treat such empty analyses as unknowns, and
+remove empty analyses from other readings. Empty readings are also
+legal in CG, they get a default baseform equal to the wordform, but
+no tag to check, so it's safer to let hfst-tokenise handle them.
+
+Finally we mark as a token any sequence making up a:
+* known word in context
+* unknown (OOV) token in context
+* sequence of word and punctuation
+* URL in context
+
+* * *
+
+<small>This (part of) documentation was generated from [tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript](https://github.com/giellalt/lang-hun/blob/main/tools/tokenisers/tokeniser-gramcheck-gt-desc.pmscript)</small>
 
 ---
 
