@@ -2,7 +2,7 @@ The Hungarian morphology and tools
 ==========================================
 
 [![GitHub issues](https://img.shields.io/github/issues-raw/giellalt/lang-hun)](https://github.com/giellalt/lang-hun/issues)
-[![Build Status](https://github.com/giellalt/lang-hun/workflows/Speller%20CI+CD/badge.svg)](https://github.com/giellalt/lang-hun/actions)
+[![Build Status](https://divvun-tc.thetc.se/api/github/v1/repository/giellalt/lang-hun/main/badge.svg)](https://github.com/giellalt/lang-hun/actions)
 [![License](https://img.shields.io/github/license/giellalt/lang-hun)](https://github.com/giellalt/lang-hun/blob/main/LICENSE)
 
 This repository contains finite state source files for the Hungarian language,
