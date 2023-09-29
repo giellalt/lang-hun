@@ -3,7 +3,7 @@
 [![Maturity: Experiment](https://img.shields.io/badge/Maturity-Experiment-black.svg)](https://giellalt.github.io/MaturityClassification.html)
 [![License](https://img.shields.io/github/license/giellalt/lang-hun)](https://github.com/giellalt/lang-hun/blob/main/LICENSE)
 [![Issues](https://img.shields.io/github/issues/giellalt/lang-hun)](https://github.com/giellalt/lang-hun/issues)
-[![Build Status](https://divvun-tc.thetc.se/api/github/v1/repository/giellalt/lang-hun/main/badge.svg)](https://github.com/giellalt/lang-hun/actions)
+[![Build Status](https://divvun-tc.giellalt.org/api/github/v1/repository/giellalt/lang-hun/main/badge.svg)](https://github.com/giellalt/lang-hun/actions)
 
 This page documents the work on the **Hungarian language model**. 
 
