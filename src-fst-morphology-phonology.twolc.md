@@ -109,6 +109,3 @@ Rule: **long high vowel variation u ü front **
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/morphology/phonology.twolc](https://github.com/giellalt/lang-hun/blob/main/src/fst/morphology/phonology.twolc)</small>
-
----
-

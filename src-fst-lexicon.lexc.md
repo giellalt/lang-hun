@@ -139,6 +139,3 @@ Verbs in UNDEFINED language are actions.
 * * *
 
 <small>This (part of) documentation was generated from [src/fst/lexicon.lexc](https://github.com/giellalt/lang-hun/blob/main/src/fst/lexicon.lexc)</small>
-
----
-
