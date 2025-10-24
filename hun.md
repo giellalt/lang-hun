@@ -4,7 +4,7 @@ All doc-comment documentation in one large file.
 
 ---
 
-# src-cg3-functions.cg3.md 
+## src-cg3-functions.cg3.md 
 
 
 
@@ -43,7 +43,7 @@ part of the noun phrase of that noun (i.e., "scan to the next NP head")
 
 These were the set types.
 
-## HABITIVE MAPPING
+### HABITIVE MAPPING
 
 * **hab1** 
 
@@ -162,16 +162,16 @@ These were the set types.
 
 * **<opredAAcc** (@<OPRED) for A Acc; if an other accusative to the left, and a transtive verb to the left of it. OR: if a transitive verb to the left, and an accusative to the left of it.
 
-### sma object
+#### sma object
 
 * **<advlEss** (@<ADVL) for ESS-ADVL if; FMAINV to the left
 * **<spredEss** (@<SPRED) for N Ess if; FMAINV to the left is intransitive or bargat
 
-## SUBJ MAPPING - leftovers
+### SUBJ MAPPING - leftovers
 
-## OBJ MAPPING - leftovers
+### OBJ MAPPING - leftovers
 
-## HNOUN MAPPING
+### HNOUN MAPPING
 
 * * *
 
@@ -179,14 +179,14 @@ These were the set types.
 
 ---
 
-# src-fst-lexicon.lexc.md 
+## src-fst-lexicon.lexc.md 
 
 
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
-# Definitions for Multichar_Symbols
+## Definitions for Multichar_Symbols
 
-## Analysis symbols
+### Analysis symbols
 The morphological analyses of wordforms for the Hungarian
 language are presented in this system in terms of the following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
@@ -248,7 +248,7 @@ And following triggers to control variation
 *  %^V2VV         lengthen vowel
 *  %^VV2V         shorten vowel
 
-## Flag diacritics
+### Flag diacritics
 POSSESSOR INDICES or POSSESSIVE SUFFIXES
 FRONT/BACK VOWEL HARMONY
 |  @C.VOWEL-HARMONY@ | used at word boundary
@@ -325,7 +325,7 @@ Verbs in UNDEFINED language are actions.
 
 ---
 
-# src-fst-morphology-affixes-adjectives.lexc.md 
+## src-fst-morphology-affixes-adjectives.lexc.md 
 
 Adjective inflection
 The Hungarian language adjectives compare.
@@ -336,7 +336,7 @@ The Hungarian language adjectives compare.
 
 ---
 
-# src-fst-morphology-affixes-nouns.lexc.md 
+## src-fst-morphology-affixes-nouns.lexc.md 
 
 Noun inflection
 The HUNGARIAN language nouns inflect in cases.
@@ -349,7 +349,7 @@ The HUNGARIAN language nouns inflect in cases.
 
 ---
 
-# src-fst-morphology-affixes-prefixes.lexc.md 
+## src-fst-morphology-affixes-prefixes.lexc.md 
 
 Prefixes
 Prefixes in the Hungarian language are bound to beginning of other words.
@@ -360,7 +360,7 @@ Prefixes in the Hungarian language are bound to beginning of other words.
 
 ---
 
-# src-fst-morphology-affixes-propernouns.lexc.md 
+## src-fst-morphology-affixes-propernouns.lexc.md 
 
 Proper noun inflection
 The HUNGARIAN language proper nouns inflect in the same cases as regular
@@ -372,10 +372,10 @@ nouns, but with a colon (':') as separator.
 
 ---
 
-# src-fst-morphology-affixes-symbols.lexc.md 
+## src-fst-morphology-affixes-symbols.lexc.md 
 
 
-# Symbol affixes
+## Symbol affixes
 
 * * *
 
@@ -383,7 +383,7 @@ nouns, but with a colon (':') as separator.
 
 ---
 
-# src-fst-morphology-affixes-verbs.lexc.md 
+## src-fst-morphology-affixes-verbs.lexc.md 
 
 Verb inflection
 The Hungarian language verbs inflect in persons.
@@ -394,15 +394,15 @@ The Hungarian language verbs inflect in persons.
 
 ---
 
-# src-fst-morphology-phonology.twolc.md 
+## src-fst-morphology-phonology.twolc.md 
 
 =================================== !
-# The Hungarian morphophonological/twolc rules file 
+## The Hungarian morphophonological/twolc rules file 
 =================================== !
 
 This file documents the [phonology.twolc file](http://github.com/giellalt/lang-hun/blob/main/src/fst/phonology.twolc) 
 
-## Alphabets and sets
+### Alphabets and sets
 
 *  a b c d e f g h i j k l m n o p q r s t u v w x y z  
    á é ó ú í ö ü ő ű  
@@ -442,7 +442,7 @@ Sets
 *  Cns = b c d f g h j k l m n p q r s t v w x z ð þ   
         B C D F G H J K L M N P Q R S T V W X Z Ð Þ ;  
 
-## Rules 
+### Rules 
 
 Rule: **Stem-final vowel lengthening** 
 béke+N+Sg+PxSg3
@@ -510,15 +510,15 @@ Rule: **long high vowel variation u ü front **
 
 ---
 
-# src-fst-morphology-root.lexc.md 
+## src-fst-morphology-root.lexc.md 
 
 
-# Hungarian morphological analyser                      !
+## Hungarian morphological analyser                      !
 INTRODUCTION TO MORPHOLOGICAL ANALYSER OF Hungarian LANGUAGE.
 
-# Definitions for Multichar_Symbols
+## Definitions for Multichar_Symbols
 
-## Analysis symbols
+### Analysis symbols
 The morphological analyses of wordforms for the Hungarian
 language are presented in this system in terms of the following symbols.
 (It is highly suggested to follow existing standards when adding new tags).
@@ -588,7 +588,7 @@ Vowel variants
 *  %{óő%}	       long mid vowel variants
 *  %{uü%}       high labial variants
 
-## Flag diacritics
+### Flag diacritics
 POSSESSOR INDICES or POSSESSIVE SUFFIXES
 FRONT/BACK VOWEL HARMONY
 |  @C.VOWEL-HARMONY@ | used at word boundary
@@ -629,7 +629,7 @@ word classes, or optionally from prefixes:
 
 ---
 
-# src-fst-morphology-stems-adjectives.lexc.md 
+## src-fst-morphology-stems-adjectives.lexc.md 
 
 Adjectives
 Adjectives in the Hungarian language describe things.
@@ -640,7 +640,7 @@ Adjectives in the Hungarian language describe things.
 
 ---
 
-# src-fst-morphology-stems-nouns.lexc.md 
+## src-fst-morphology-stems-nouns.lexc.md 
 
 Nouns
 Nouns in HUNGARIAN language are things.
@@ -653,7 +653,7 @@ new code
 
 ---
 
-# src-fst-morphology-stems-numerals.lexc.md 
+## src-fst-morphology-stems-numerals.lexc.md 
 
 Numerals
 Numerals in the Hungarian language are numbers.
@@ -664,7 +664,7 @@ Numerals in the Hungarian language are numbers.
 
 ---
 
-# src-fst-morphology-stems-pronouns.lexc.md 
+## src-fst-morphology-stems-pronouns.lexc.md 
 
 Pronouns
 Pronouns in the Hungarian language are references to things.
@@ -675,7 +675,7 @@ Pronouns in the Hungarian language are references to things.
 
 ---
 
-# src-fst-morphology-stems-propernouns.lexc.md 
+## src-fst-morphology-stems-propernouns.lexc.md 
 
 Proper nouns
 Proper nouns in the HUNGARIAN language are references to things.
@@ -686,7 +686,7 @@ Proper nouns in the HUNGARIAN language are references to things.
 
 ---
 
-# src-fst-morphology-stems-verbs.lexc.md 
+## src-fst-morphology-stems-verbs.lexc.md 
 
 Verbs
 Verbs in the Hungarian language are actions.
@@ -697,7 +697,7 @@ Verbs in the Hungarian language are actions.
 
 ---
 
-# src-fst-phonetics-txt2ipa.xfscript.md 
+## src-fst-phonetics-txt2ipa.xfscript.md 
 
 
 
@@ -866,7 +866,7 @@ retracted tongue root			_q
 
 ---
 
-# src-fst-transcriptions-transcriptor-abbrevs2text.lexc.md 
+## src-fst-transcriptions-transcriptor-abbrevs2text.lexc.md 
 
 
 
@@ -888,7 +888,7 @@ For example:
 
 ---
 
-# src-fst-transcriptions-transcriptor-numbers-digit2text.lexc.md 
+## src-fst-transcriptions-transcriptor-numbers-digit2text.lexc.md 
 
 
 
@@ -904,26 +904,26 @@ For example:
 
 ---
 
-# tools-grammarcheckers-grammarchecker.cg3.md 
+## tools-grammarcheckers-grammarchecker.cg3.md 
 
 
 [ L A N G U A G E ]  G R A M M A R   C H E C K E R
 
-# DELIMITERS
+## DELIMITERS
 
-# TAGS AND SETS
+## TAGS AND SETS
 
-## Tags
+### Tags
 
 This section lists all the tags inherited from the fst, and used as tags
 in the syntactic analysis. The next section, **Sets**, contains sets defined
 on the basis of the tags listed here, those set names are not visible in the output.
 
-### Beginning and end of sentence
+#### Beginning and end of sentence
 BOS
 EOS
 
-### Parts of speech tags
+#### Parts of speech tags
 
 N
 A
@@ -950,7 +950,7 @@ PUNCT
 COMMA
 ¶
 
-### Tags for POS sub-categories
+#### Tags for POS sub-categories
 
 Pers
 Dem
@@ -966,7 +966,7 @@ Allegro
 Arab
 Romertall
 
-### Tags for morphosyntactic properties
+#### Tags for morphosyntactic properties
 
 Nom
 Acc
@@ -1029,7 +1029,7 @@ VAbess
 
 Err/Orth
 
-### Semantic tags
+#### Semantic tags
 
 Sem/Act
 Sem/Ani
@@ -1062,7 +1062,7 @@ PROP-SUR
 
 TIME-N-SET
 
-###  Syntactic tags
+####  Syntactic tags
 
 @+FAUXV
 @+FMAINV
@@ -1132,22 +1132,22 @@ OBJ>-OTHERS
 SYN-V
 @X
 
-## Sets containing sets of lists and tags
+### Sets containing sets of lists and tags
 
 This part of the file lists a large number of sets based partly upon the tags defined above, and
 partly upon lexemes drawn from the lexicon.
 See the sourcefile itself to inspect the sets, what follows here is an overview of the set types.
 
-### Sets for Single-word sets
+#### Sets for Single-word sets
 
 INITIAL
 
-### Sets for word or not
+#### Sets for word or not
 
 WORD
 NOT-COMMA
 
-### Case sets
+#### Case sets
 
 ADLVCASE
 
@@ -1158,11 +1158,11 @@ NOT-NOM
 NOT-GEN
 NOT-ACC
 
-### Verb sets
+#### Verb sets
 
 NOT-V
 
-### Sets for finiteness and mood
+#### Sets for finiteness and mood
 
 REAL-NEG
 
@@ -1170,7 +1170,7 @@ MOOD-V
 
 NOT-PRFPRC
 
-### Sets for person
+#### Sets for person
 
 SG1-V
 SG2-V
@@ -1182,25 +1182,25 @@ PL1-V
 PL2-V
 PL3-V
 
-### Pronoun sets
+#### Pronoun sets
 
-### Adjectival sets and their complements
+#### Adjectival sets and their complements
 
-### Adverbial sets and their complements
+#### Adverbial sets and their complements
 
-### Sets of elements with common syntactic behaviour
+#### Sets of elements with common syntactic behaviour
 
-### NP sets defined according to their morphosyntactic features
+#### NP sets defined according to their morphosyntactic features
 
-### The PRE-NP-HEAD family of sets
+#### The PRE-NP-HEAD family of sets
 
 These sets model noun phrases (NPs). The idea is to first define whatever can
 occur in front of the head of the NP, and thereafter negate that with the
 expression **WORD - premodifiers**.
 
-### Border sets and their complements
+#### Border sets and their complements
 
-### Grammarchecker sets
+#### Grammarchecker sets
 
 * * *
 
@@ -1208,9 +1208,9 @@ expression **WORD - premodifiers**.
 
 ---
 
-# tools-tokenisers-tokeniser-disamb-gt-desc.pmscript.md 
+## tools-tokenisers-tokeniser-disamb-gt-desc.pmscript.md 
 
-# Tokeniser for hun
+## Tokeniser for hun
 
 Usage:
 ```
@@ -1254,7 +1254,7 @@ ASCII digits
 so far:
 * U+F0B7 for "x in box"
 
-## Unknown handling
+### Unknown handling
 Unknowns are tagged ?? and treated specially with `hfst-tokenise`
 hfst-tokenise --giella-cg will treat such empty analyses as unknowns, and
 remove empty analyses from other readings. Empty readings are also
@@ -1273,9 +1273,9 @@ Finally we mark as a token any sequence making up a:
 
 ---
 
-# tools-tokenisers-tokeniser-gramcheck-gt-desc.pmscript.md 
+## tools-tokenisers-tokeniser-gramcheck-gt-desc.pmscript.md 
 
-# Grammar checker tokenisation for hun
+## Grammar checker tokenisation for hun
 
 Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
 Then just:
@@ -1338,9 +1338,9 @@ Finally we mark as a token any sequence making up a:
 
 ---
 
-# tools-tokenisers-tokeniser-tts-cggt-desc.pmscript.md 
+## tools-tokenisers-tokeniser-tts-cggt-desc.pmscript.md 
 
-# TTS tokenisation for smj
+## TTS tokenisation for smj
 
 Requires a recent version of HFST (3.10.0 / git revision>=3aecdbc)
 Then just:
