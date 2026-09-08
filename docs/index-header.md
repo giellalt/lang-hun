@@ -4,15 +4,7 @@
 
 {% include_relative language-map.md %}
 
-<div class="badges" markdown="1">
-[![Maturity](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgiellalt%2Flang-hun%2Fgenerated%2Fdocs-data%2Ffst-maturity.json)](https://giellalt.github.io/MaturityClassification.html) <br/>
-![Lemma count](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgiellalt%2Flang-hun%2Fgenerated%2Fdocs-data%2Ffst-lemmacount.json) <br/>
-[![Speller suggestion quality](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgiellalt%2Flang-hun%2Fgenerated%2Fdocs-data%2Fspeller-suggestions.json)](typosreport/) <br/>
-[![License](https://img.shields.io/github/license/giellalt/lang-hun)](https://github.com/giellalt/lang-hun/blob/main/LICENSE) <br/>
-[![Issues](https://img.shields.io/github/issues/giellalt/lang-hun)](https://github.com/giellalt/lang-hun/issues) <br/>
-[![Build Status](https://builds.giellalt.org/api/badge/lang-hun?label=CI)](https://builds.giellalt.org/pipelines/lang-hun/builds/latest) <br/>
-[![Glottolog](https://img.shields.io/badge/Glottolog-green)](https://glottolog.org/resource/languoid/id/hung1274)
-</div>
+{% include language-badges.html glottolog_id="hung1274" %}
 
 Center location data taken from [Glottolog](https://glottolog.org/). Area extent is local data. Both can be adjusted if wrong - file a pull request!
 
